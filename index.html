@@ -1,22 +1,130 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Zelve</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Navegação Zelve</title>
     <style>
+        /* --- ESTILOS GERAIS --- */
         body {
-            background-color: #0b0c10;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            font-family: sans-serif;
+            padding: 0;
+            font-family: Arial, sans-serif; /* Usando Arial para compatibilidade, similar à imagem */
+            background-color: #fcfcfc; /* Cor de fundo levemente off-white vista no print */
+        }
+
+        /* --- CONTAINER DO HEADER --- */
+        .main-header {
+            background-color: #ffffff; /* Fundo branco puro da barra */
+            border-bottom: 1px solid #e0e0e0; /* Linha sutil na parte inferior */
+            padding: 0 20px; /* Espaçamento interno nas laterais */
+            display: flex;
+            justify-content: space-between; /* Separa os elementos (logo, links, botões) */
+            align-items: center; /* Centraliza verticalmente */
+            height: 80px; /* Altura aproximada da barra */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra suave para dar profundidade */
+        }
+
+        /* --- SEÇÃO DO LOGO --- */
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-image {
+            /* IMPORTANTE: Ajuste a altura para que o logo fique bem na barra */
+            height: 50px; /* Altura definida para o logo da Zelve */
+            width: auto; /* Mantém a proporção da imagem */
+            margin-right: 15px; /* Espaço entre o logo e o primeiro link */
+        }
+
+        /* --- SEÇÃO DE NAVEGAÇÃO (LINKS CENTRAIS) --- */
+        .nav-links {
+            display: flex;
+            list-style: none; /* Remove os pontos da lista */
+            margin: 0;
+            padding: 0;
+            gap: 25px; /* Espaçamento entre os links */
+        }
+
+        .nav-links a {
+            text-decoration: none; /* Remove o sublinhado */
+            color: #333333; /* Cor escura do texto */
+            font-weight: 500; /* Peso médio da fonte */
+            font-size: 15px; /* Tamanho da fonte */
+            transition: color 0.3s ease; /* Efeito suave ao passar o mouse */
+        }
+
+        .nav-links a:hover {
+            color: #007bff; /* Cor azul ao passar o mouse (exemplo padrão) */
+        }
+
+        /* --- SEÇÃO DE BOTÕES DE AÇÃO (DIREITA) --- */
+        .action-buttons {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Espaçamento entre os botões */
+        }
+
+        /* Botão "Entrar" (Estilo Outlined/Discreto) */
+        .btn-entrar {
+            text-decoration: none;
+            color: #333333;
+            font-size: 15px;
+            padding: 10px 20px;
+            border: 1px solid #cccccc; /* Borda cinza clara */
+            border-radius: 20px; /* Bordas arredondadas vistas no print */
+            background-color: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .btn-entrar:hover {
+            background-color: #f0f0f0;
+            border-color: #999999;
+        }
+
+        /* Botão "Inscreva-se" (Estilo Sólido/Preto) */
+        .btn-inscreva {
+            text-decoration: none;
+            color: #ffffff; /* Texto branco */
+            font-size: 15px;
+            padding: 10px 20px;
+            border-radius: 20px; /* Bordas bem arredondadas */
+            background-color: #000000; /* Fundo preto puro visto no print */
+            border: 1px solid #000000;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-inscreva:hover {
+            background-color: #333333; /* Preto ligeiramente mais claro no hover */
         }
     </style>
 </head>
 <body>
-    <h1>Em desenvolvimento</h1>
+
+    <header class="main-header">
+        
+        <div class="logo-container">
+            <img src="logo-zelve.jpeg" alt="Zelve Technologies Logo" class="logo-image">
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">ElevenCreative</a></li>
+                <li><a href="#">ElevenAgents</a></li>
+                <li><a href="#">ElevenAPI</a></li>
+                <li><a href="#">Recursos</a></li>
+                <li><a href="#">Empresas</a></li>
+                <li><a href="#">Preços</a></li>
+            </ul>
+        </nav>
+
+        <div class="action-buttons">
+            <a href="#" class="btn-entrar">Entrar</a>
+            <a href="#" class="btn-inscreva">Inscreva-se</a>
+        </div>
+
+    </header>
+
 </body>
 </html>
