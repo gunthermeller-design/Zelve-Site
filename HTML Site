@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zelve | Tecnologia e Processos</title>
+    <title>Zelve Technologies | Site em Desenvolvimento</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Estilos Globais */
         :root {
-            --bg: #0a0a0a;
-            --primary: #0070f3;
-            --text: #ffffff;
-            --gray: #888888;
+            --bg-color: #0b0c10; /* Preto profundo, moderno */
+            --text-color: #ffffff;
+            --accent-color: #66fcf1; /* Ciano claro para detalhes de destaque */
+            --gray-text: #8b9bb4;
         }
 
         body {
-            background-color: var(--bg);
-            color: var(--text);
+            background-color: var(--bg-color);
+            color: var(--text-color);
             font-family: 'Inter', sans-serif;
             margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -27,64 +29,35 @@
             text-align: center;
         }
 
-        .container {
+        /* Container Principal */
+        .coming-soon-container {
             padding: 20px;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
+        /* Estilo da Logo */
+        .logo {
+            max-width: 250px; /* Tamanho da logo na tela */
+            height: auto;
+            margin-bottom: 40px; /* Espaço abaixo da logo */
+            filter: drop-shadow(0 0 10px rgba(102, 252, 241, 0.2)); /* Leve brilho ciano */
+        }
+
+        /* Estilo do Texto Principal */
         h1 {
-            font-size: 4rem;
+            font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 10px;
-            letter-spacing: -2px;
-            background: linear-gradient(to right, #fff, #444);
+            letter-spacing: -1px;
+            /* Efeito de gradiente no texto */
+            background: linear-gradient(135deg, #ffffff 0%, #66fcf1 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
+        /* Estilo do Texto Secundário */
         p {
-            font-size: 1.2rem;
-            color: var(--gray);
-            max-width: 600px;
-            line-height: 1.6;
-        }
-
-        .badge {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-
-        .cta-button {
-            margin-top: 30px;
-            padding: 12px 30px;
-            background-color: var(--text);
-            color: var(--bg);
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        .cta-button:hover {
-            opacity: 0.8;
-            transform: translateY(-2px);
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <div class="badge">Em breve</div>
-        <h1>Zelve</h1>
-        <p>Transformando processos complexos em fluxos inteligentes. <br> A nova era da tecnologia para o seu negócio está chegando.</p>
-        
-        <a href="mailto:contato@zelve.com.br" class="cta-button">Fale Conosco</a>
-    </div>
-
-</body>
-</html>
+            font-size
