@@ -3,128 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barra de Navegação Zelve</title>
+    <title>Zelve Technologies | Inteligência Artificial para Negócios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* --- ESTILOS GERAIS --- */
+        /* CONFIGURAÇÕES GERAIS */
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #666666;
+            --accent-color: #007bff; /* Azul moderno para detalhes */
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+        }
+
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif; /* Usando Arial para compatibilidade, similar à imagem */
-            background-color: #fcfcfc; /* Cor de fundo levemente off-white vista no print */
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: var(--white);
         }
 
-        /* --- CONTAINER DO HEADER --- */
-        .main-header {
-            background-color: #ffffff; /* Fundo branco puro da barra */
-            border-bottom: 1px solid #e0e0e0; /* Linha sutil na parte inferior */
-            padding: 0 20px; /* Espaçamento interno nas laterais */
+        /* HEADER / NAV */
+        header {
             display: flex;
-            justify-content: space-between; /* Separa os elementos (logo, links, botões) */
-            align-items: center; /* Centraliza verticalmente */
-            height: 80px; /* Altura aproximada da barra */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra suave para dar profundidade */
-        }
-
-        /* --- SEÇÃO DO LOGO --- */
-        .logo-container {
-            display: flex;
+            justify-content: space-between;
             align-items: center;
+            padding: 15px 5%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #eaeaea;
         }
 
-        .logo-image {
-            /* IMPORTANTE: Ajuste a altura para que o logo fique bem na barra */
-            height: 50px; /* Altura definida para o logo da Zelve */
-            width: auto; /* Mantém a proporção da imagem */
-            margin-right: 15px; /* Espaço entre o logo e o primeiro link */
+        .logo-container img {
+            height: 45px; /* Ajuste conforme necessário */
+            width: auto;
+            display: block;
         }
 
-        /* --- SEÇÃO DE NAVEGAÇÃO (LINKS CENTRAIS) --- */
-        .nav-links {
+        nav ul {
             display: flex;
-            list-style: none; /* Remove os pontos da lista */
+            list-style: none;
+            gap: 30px;
             margin: 0;
             padding: 0;
-            gap: 25px; /* Espaçamento entre os links */
         }
 
-        .nav-links a {
-            text-decoration: none; /* Remove o sublinhado */
-            color: #333333; /* Cor escura do texto */
-            font-weight: 500; /* Peso médio da fonte */
-            font-size: 15px; /* Tamanho da fonte */
-            transition: color 0.3s ease; /* Efeito suave ao passar o mouse */
+        nav ul li a {
+            text-decoration: none;
+            color: #444;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: #007bff; /* Cor azul ao passar o mouse (exemplo padrão) */
+        nav ul li a:hover {
+            color: var(--accent-color);
         }
 
-        /* --- SEÇÃO DE BOTÕES DE AÇÃO (DIREITA) --- */
-        .action-buttons {
+        .auth-buttons {
             display: flex;
+            gap: 15px;
             align-items: center;
-            gap: 15px; /* Espaçamento entre os botões */
         }
 
-        /* Botão "Entrar" (Estilo Outlined/Discreto) */
-        .btn-entrar {
+        .btn-login {
             text-decoration: none;
-            color: #333333;
-            font-size: 15px;
-            padding: 10px 20px;
-            border: 1px solid #cccccc; /* Borda cinza clara */
-            border-radius: 20px; /* Bordas arredondadas vistas no print */
-            background-color: transparent;
-            transition: all 0.3s ease;
+            color: #333;
+            font-size: 14px;
+            font-weight: 600;
         }
 
-        .btn-entrar:hover {
-            background-color: #f0f0f0;
-            border-color: #999999;
-        }
-
-        /* Botão "Inscreva-se" (Estilo Sólido/Preto) */
-        .btn-inscreva {
+        .btn-cta-nav {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 10px 22px;
+            border-radius: 50px;
             text-decoration: none;
-            color: #ffffff; /* Texto branco */
-            font-size: 15px;
-            padding: 10px 20px;
-            border-radius: 20px; /* Bordas bem arredondadas */
-            background-color: #000000; /* Fundo preto puro visto no print */
-            border: 1px solid #000000;
-            transition: background-color 0.3s ease;
+            font-size: 14px;
+            font-weight: 600;
+            transition: transform 0.2s;
         }
 
-        .btn-inscreva:hover {
-            background-color: #333333; /* Preto ligeiramente mais claro no hover */
+        .btn-cta-nav:hover {
+            transform: scale(1.05);
+        }
+
+        /* HERO SECTION (Seção Principal) */
+        .hero {
+            padding: 100px 5% 80px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 40px;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 18px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* SEÇÃO DE RECURSOS (FEATURES) */
+        .features {
+            background: var(--bg-light);
+            padding: 80px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: translateY -5px;
+        }
+
+        .feature-card i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 50px 5%;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            nav, .auth-buttons { display: none; } /* Simplificação para mobile */
+            .hero h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <header class="main-header">
-        
+    <header>
         <div class="logo-container">
-            <img src="logo-zelve.jpeg" alt="Zelve Technologies Logo" class="logo-image">
+            <img src="logo-zelve.jpeg" alt="Zelve Technologies">
         </div>
 
         <nav>
-            <ul class="nav-links">
-                <li><a href="#">ElevenCreative</a></li>
-                <li><a href="#">ElevenAgents</a></li>
-                <li><a href="#">ElevenAPI</a></li>
-                <li><a href="#">Recursos</a></li>
-                <li><a href="#">Empresas</a></li>
-                <li><a href="#">Preços</a></li>
+            <ul>
+                <li><a href="#solucoes">Soluções</a></li>
+                <li><a href="#tecnologia">Tecnologia</a></li>
+                <li><a href="#casos">Casos de Sucesso</a></li>
+                <li><a href="#precos">Preços</a></li>
             </ul>
         </nav>
 
-        <div class="action-buttons">
-            <a href="#" class="btn-entrar">Entrar</a>
-            <a href="#" class="btn-inscreva">Inscreva-se</a>
+        <div class="auth-buttons">
+            <a href="#" class="btn-login">Entrar</a>
+            <a href="#" class="btn-cta-nav">Começar Agora</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>A Inteligência Artificial que escala o seu negócio.</h1>
+        <p>A Zelve Technologies utiliza modelos avançados de I.A. para automatizar processos, prever tendências e aumentar a produtividade da sua equipe em até 10x.</p>
+        
+        <div class="hero-btns">
+            <a href="#" class="btn-primary">Quero testar a ferramenta</a>
+        </div>
+    </section>
+
+    <section class="features" id="solucoes">
+        <div class="feature-card">
+            <i class="fas fa-brain"></i>
+            <h3>Processamento Neural</h3>
+            <p>Análise de dados em tempo real com modelos customizados para a necessidade da sua empresa.</p>
         </div>
 
-    </header>
+        <div class="feature-card">
+            <i class="fas fa-microchip"></i>
+            <h3>Integração API</h3>
+            <p>Conecte a inteligência da Zelve diretamente ao seu software via API robusta e segura.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fas fa-shield-halved"></i>
+            <h3>Segurança Enterprise</h3>
+            <p>Seus dados são protegidos com criptografia de ponta e conformidade total com a LGPD.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Zelve Technologies. Todos os direitos reservados.</p>
+    </footer>
 
 </body>
 </html>
