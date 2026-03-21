@@ -78,6 +78,8 @@
         }
 
         .btn-primary {
+            display: inline-block; /* Garante que o botão aceite margens verticais */
+            margin-top: 48px;      /* Espaçamento de aproximadamente 2 linhas */
             background: var(--primary-color);
             color: white;
             padding: 22px 50px;
@@ -91,7 +93,7 @@
 
         .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
 
-        /* NOVA SEÇÃO: COMPARATIVO DE EFICIÊNCIA */
+        /* SEÇÃO: COMPARATIVO DE EFICIÊNCIA */
         .efficiency-section {
             padding: 100px 8%;
             background: var(--bg-light);
@@ -186,7 +188,6 @@
             <span style="color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Autonomia Comercial Estável</span>
             <h1>Sua operação comercial sem as limitações humanas.</h1>
             <p>Enquanto equipes tradicionais geram custos variáveis e gargalos operacionais, a Zelve entrega uma força de vendas constante, escalável e baseada em processamento neural de linguagem.</p>
-
             
             <a href="#" class="btn-primary">Ativar Engine Cognitiva</a>
         </section>
