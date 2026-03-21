@@ -2,62 +2,21 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zelve Technologies | Site em Desenvolvimento</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Zelve</title>
     <style>
-        /* Estilos Globais */
-        :root {
-            --bg-color: #0b0c10; /* Preto profundo, moderno */
-            --text-color: #ffffff;
-            --accent-color: #66fcf1; /* Ciano claro para detalhes de destaque */
-            --gray-text: #8b9bb4;
-        }
-
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
+            background-color: #0b0c10;
+            color: white;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-        }
-
-        /* Container Principal */
-        .coming-soon-container {
-            padding: 20px;
-            max-width: 600px;
-            display: flex;
-            flex-direction: column;
             align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
         }
-
-        /* Estilo da Logo */
-        .logo {
-            max-width: 250px; /* Tamanho da logo na tela */
-            height: auto;
-            margin-bottom: 40px; /* Espaço abaixo da logo */
-            filter: drop-shadow(0 0 10px rgba(102, 252, 241, 0.2)); /* Leve brilho ciano */
-        }
-
-        /* Estilo do Texto Principal */
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
-            /* Efeito de gradiente no texto */
-            background: linear-gradient(135deg, #ffffff 0%, #66fcf1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Estilo do Texto Secundário */
-        p {
-            font-size
+    </style>
+</head>
+<body>
+    <h1>Em desenvolvimento</h1>
+</body>
+</html>
