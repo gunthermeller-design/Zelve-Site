@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zelve Technologies | Automação de Vendas e IA Conversacional</title>
+    <title>Zelve Technologies | Inteligência Conversacional para Autocentros</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #000000;
             --secondary-color: #666666;
-            --accent-color: #007bff;
-            --bg-light: #f8f9fa;
+            --accent-color: #0066FF;
+            --bg-light: #f9f9fb;
             --white: #ffffff;
-            --whatsapp-green: #25D366;
         }
 
         body {
@@ -25,13 +24,13 @@
             background-color: var(--white);
         }
 
-        /* HEADER */
+        /* HEADER - FOCO NO LOGO */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 5%;
-            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 8%; /* Reduzi o padding vertical para compensar a logo maior */
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
@@ -39,165 +38,124 @@
             border-bottom: 1px solid #eee;
         }
 
-        .logo-container img {
-            height: 80px;
-            width: auto;
-        }
-
-        nav ul {
+        .logo-container {
             display: flex;
-            list-style: none;
-            gap: 30px;
-            margin: 0;
+            align-items: center;
         }
 
-        nav ul li a {
-            text-decoration: none;
-            color: #555;
-            font-weight: 500;
-            font-size: 14px;
-            transition: 0.3s;
+        .logo-container img {
+            height: 80px; /* Tamanho exato solicitado */
+            width: auto;
+            display: block;
+            object-fit: contain;
         }
 
-        nav ul li a:hover { color: var(--primary-color); }
+        nav ul { display: flex; list-style: none; gap: 35px; margin: 0; }
+        nav ul li a { text-decoration: none; color: #444; font-weight: 500; font-size: 14px; transition: 0.3s; }
+        nav ul li a:hover { color: var(--accent-color); }
 
         .btn-cta-nav {
             background: var(--primary-color);
             color: var(--white);
-            padding: 10px 24px;
-            border-radius: 50px;
+            padding: 12px 28px;
+            border-radius: 8px;
             text-decoration: none;
             font-size: 14px;
             font-weight: 600;
+            transition: 0.3s;
         }
 
-        /* HERO */
+        /* HERO - DIFERENCIAL ZELVE */
         .hero {
-            padding: 120px 5% 80px;
+            padding: 100px 8% 80px;
             text-align: center;
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
+        }
+
+        .hero span.badge {
+            background: #f0f4ff;
+            color: var(--accent-color);
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
         }
 
         .hero h1 {
             font-size: 3.8rem;
             font-weight: 800;
             line-height: 1.1;
-            margin-bottom: 24px;
+            margin: 30px 0;
             letter-spacing: -2px;
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             color: var(--secondary-color);
-            max-width: 700px;
-            margin: 0 auto 40px;
+            max-width: 850px;
+            margin: 0 auto 50px;
         }
 
         .btn-primary {
             background: var(--primary-color);
             color: white;
-            padding: 20px 40px;
-            border-radius: 12px;
+            padding: 22px 50px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 700;
             font-size: 1.1rem;
-            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        /* NOVA SEÇÃO: IA CONVERSACIONAL & WHATSAPP */
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+
+        /* SEÇÃO CORE - IA CONVERSACIONAL */
         .ai-conversation {
-            padding: 100px 5%;
-            background: #ffffff;
-            display: flex;
+            padding: 100px 8%;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 100px;
             align-items: center;
-            gap: 60px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .ai-text { flex: 1; }
-        .ai-image { 
-            flex: 1; 
-            background: var(--bg-light);
-            padding: 40px;
-            border-radius: 24px;
-            text-align: center;
-            border: 1px solid #efefef;
-        }
-
-        .tag {
-            background: #eef6ff;
-            color: var(--accent-color);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            display: inline-block;
-        }
-
-        .ai-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .ai-text p {
-            font-size: 1.1rem;
-            color: var(--secondary-color);
-            margin-bottom: 25px;
-        }
-
+        .ai-text h2 { font-size: 2.8rem; line-height: 1.1; margin-bottom: 30px; }
+        
         .highlight-box {
-            border-left: 4px solid var(--whatsapp-green);
-            padding-left: 20px;
-            margin-top: 30px;
+            border-left: 5px solid var(--accent-color);
+            padding: 5px 0 5px 30px;
+            margin-top: 45px;
         }
 
-        .highlight-box h4 {
-            margin: 0 0 5px 0;
-            color: var(--primary-color);
-        }
+        .highlight-box h4 { font-size: 1.4rem; margin-bottom: 12px; }
+        .highlight-box p { font-size: 1.1rem; color: var(--secondary-color); }
 
-        /* FEATURES GRID */
-        .features {
+        .ai-image { 
             background: var(--bg-light);
-            padding: 80px 5%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            padding: 50px;
+            border-radius: 40px;
+            border: 1px solid #efefef;
+            text-align: center;
         }
 
-        .feature-card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 16px;
-            transition: 0.3s;
-        }
-
-        .feature-card:hover { transform: translateY(-5px); }
-
-        .feature-card i {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-
+        /* RODAPÉ */
         footer {
-            padding: 60px 5%;
+            padding: 80px 8% 40px;
             text-align: center;
             border-top: 1px solid #eee;
-            font-size: 0.9rem;
-            color: #999;
+            font-size: 14px;
+            color: #aaa;
         }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .ai-conversation { flex-direction: column; text-align: center; }
+        @media (max-width: 1024px) {
+            .ai-conversation { grid-template-columns: 1fr; gap: 60px; text-align: center; }
             .highlight-box { text-align: left; }
-            nav { display: none; }
+            .hero h1 { font-size: 3rem; }
         }
     </style>
 </head>
@@ -209,66 +167,49 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#ia-conversacional">IA Conversacional</a></li>
+                <li><a href="#ia-conversacional">O Diferencial</a></li>
                 <li><a href="#solucoes">Soluções</a></li>
-                <li><a href="#tecnologia">Tecnologia</a></li>
-                <li><a href="#precos">Preços</a></li>
+                <li><a href="#tecnologia">Infraestrutura</a></li>
             </ul>
         </nav>
-        <div class="auth-buttons">
-            <a href="#" class="btn-cta-nav">Agendar Demonstração</a>
-        </div>
+        <a href="#" class="btn-cta-nav" style="background: #000;">Agendar Demo</a>
     </header>
 
-    <section class="hero">
-        <h1>Transforme cliques em clientes com I.A de alta performance.</h1>
-        <p>A Zelve Technologies automatiza o ciclo completo de vendas e atendimento, permitindo que sua empresa opere 24/7 com precisão humana e escala infinita.</p>
-        <a href="#" class="btn-primary">Entenda mais sobre a Zelve </a>
-    </section>
+    <main>
+        <section class="hero">
+            <span class="badge">Autonomia Comercial Enterprise</span>
+            <h1>A Zelve não apenas qualifica leads. Ela conclui vendas.</h1>
+            <p>Diferente de sistemas de automação de SDR que dependem de um humano para finalizar o processo, a Zelve gerencia o ciclo comercial completo do seu Autocentro de forma totalmente autônoma.</p>
+            <a href="#" class="btn-primary">Provisionar Infraestrutura</a>
+        </section>
 
-    <section class="ai-conversation" id="ia-conversacional">
-        <div class="ai-text">
-            <span class="tag">Próxima Geração</span>
-            <h2>Interações Humanizadas, <br>Resultados Escalonáveis.</h2>
-            <p>A IA Conversacional da Zelve redefine o engajamento digital através de diálogos inteligentes em tempo real. Nossa engine processa voz e texto com fluidez, resolvendo demandas complexas instantaneamente.</p>
-            <p>Mais do que um chatbot, é uma interface contextual que aprende com seus dados e se integra perfeitamente ao seu ecossistema de trabalho.</p>
+        <section class="ai-conversation" id="ia-conversacional">
+            <div class="ai-text">
+                <h2>O fim do gargalo humano no seu atendimento.</h2>
+                <p>Nossa IA Conversacional possui <strong>consciência técnica automotiva</strong>. Ela interpreta demandas de manutenção, gera orçamentos baseados nos seus serviços e conduz o cliente até o agendamento final no WhatsApp.</p>
+                
+                <div class="highlight-box">
+                    <h4>Fechamento Autônomo</h4>
+                    <p>Enquanto seus concorrentes usam bots para coletar dados e repassar para um vendedor sobrecarregado, a Zelve assume a linha de frente e resolve a venda na hora, 24 horas por dia.</p>
+                </div>
+            </div>
             
-            <div class="highlight-box">
-                <h4>Vendas Autônomas via WhatsApp</h4>
-                <p>Nossa tecnologia elimina a dependência de operadores humanos para o atendimento comercial online. A Zelve qualifica leads, apresenta produtos e fecha vendas diretamente no WhatsApp, mantendo o tom de voz da sua marca e garantindo que nenhuma oportunidade seja perdida por demora na resposta.</p>
+            <div class="ai-image">
+                <div style="text-align: left; background: #fff; padding: 25px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05);">
+                    <div style="font-size: 13px; color: #999; margin-bottom: 15px;">Interface de Resposta Zelve Core v3.0</div>
+                    <div style="font-weight: 600; color: #333; margin-bottom: 5px;">Lead Qualificado via WhatsApp:</div>
+                    <div style="color: var(--accent-color); font-family: monospace; background: #f0f7ff; padding: 10px; border-radius: 5px;">
+                        Status: Venda Concluída <br>
+                        Ação: Agendamento Confirmado
+                    </div>
+                </div>
+                <p style="margin-top: 30px; font-weight: 800; color: #000; letter-spacing: 1px;">ZELVE CORE ENGINE</p>
             </div>
-        </div>
-        <div class="ai-image">
-            <i class="fas fa-robot" style="font-size: 100px; color: #ddd; margin-bottom: 20px;"></i>
-            <p style="font-weight: 600; color: #444;">Engine Zelve v3.0</p>
-            <div style="text-align: left; background: white; padding: 15px; border-radius: 10px; margin-top: 10px; font-size: 13px; border-left: 3px solid var(--accent-color);">
-                "Como posso ajudar a escalar suas vendas hoje?"
-            </div>
-        </div>
-    </section>
-
-    <section class="features" id="solucoes">
-        <div class="feature-card">
-            <i class="fas fa-comment-dots"></i>
-            <h3>Omnichannel Real-time</h3>
-            <p>Presença consistente em chat e voz, com respostas adaptadas ao canal de preferência do seu cliente.</p>
-        </div>
-
-        <div class="feature-card">
-            <i class="fas fa-chart-line"></i>
-            <h3>Conversão Otimizada</h3>
-            <p>Algoritmos focados em persuasão e fechamento, reduzindo drasticamente o CAC da sua operação.</p>
-        </div>
-
-        <div class="feature-card">
-            <i class="fas fa-shield-check"></i>
-            <h3>Confiabilidade Enterprise</h3>
-            <p>Arquitetura robusta pronta para lidar com milhares de atendimentos simultâneos sem perda de performance.</p>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2026 Zelve Technologies. Liderando a revolução da IA Conversacional.</p>
+        <p>&copy; 2026 Zelve Technologies. Infraestrutura Conversacional para o Mercado Automotivo Premium.</p>
     </footer>
 
 </body>
