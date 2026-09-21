@@ -22,7 +22,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 
 <script type="application/ld+json">
 {
@@ -54,86 +54,85 @@
     --amber: #B57A20;
     --amber-light: #F0E3CC;
     --line: #DCDAD5;
+    --line-strong: #C4C1BA;
     --text-secondary: #6B6E73;
     --on-ink: #C9CACC;
     --on-ink-label: #8E9195;
     --on-ink-line: #3A3B3E;
     --font-body: 'Manrope', -apple-system, 'Segoe UI', sans-serif;
     --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
-    --max: 1180px;
+    --max: 1240px;
+    --gutter: 24px;
   }
 
   * { box-sizing: border-box; }
 
-  html {
-    background: var(--paper);
-    scroll-behavior: smooth;
-  }
+  html { background: var(--paper); scroll-behavior: smooth; }
 
   body {
     margin: 0;
     background: var(--paper);
     color: var(--ink-soft);
     font-family: var(--font-body);
-    font-weight: 300;
-    line-height: 1.55;
+    font-weight: 400;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    padding-inline: 24px;
+    padding-inline: var(--gutter);
   }
 
-  h1, h2, h3 { font-weight: 500; letter-spacing: -0.01em; text-wrap: balance; margin: 0; }
+  h1, h2, h3 { font-weight: 600; letter-spacing: -0.025em; text-wrap: balance; margin: 0; }
   p { margin: 0; }
   a { color: inherit; }
 
-  a:focus-visible,
-  button:focus-visible,
-  summary:focus-visible {
+  a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, textarea:focus-visible {
     outline: 2px solid var(--amber);
-    outline-offset: 3px;
+    outline-offset: 2px;
   }
 
   .skip-link {
-    position: absolute;
-    left: -9999px;
-    top: 0;
-    background: var(--ink);
-    color: var(--paper);
-    padding: 12px 20px;
-    font-size: 14px;
-    z-index: 100;
+    position: absolute; left: -9999px; top: 0;
+    background: var(--ink); color: var(--paper);
+    padding: 12px 20px; font-size: 14px; z-index: 100;
   }
-  .skip-link:focus { left: 24px; top: 12px; }
+  .skip-link:focus { left: var(--gutter); top: 12px; }
+
+  .wrap { max-width: var(--max); margin-inline: auto; }
+
+  .bleed {
+    margin-inline: calc(-1 * var(--gutter));
+    padding-inline: var(--gutter);
+  }
 
   .label {
     font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.18em;
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--amber);
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .label::before {
+    content: "";
+    width: 7px; height: 7px;
+    background: currentColor;
+    flex: none;
   }
   .label.neutral { color: var(--text-secondary); }
   .label.on-ink { color: var(--on-ink-label); }
 
-  .wrap {
-    max-width: var(--max);
-    margin-inline: auto;
-  }
-
   /* ---------- Marca ---------- */
   .mark {
-    --side: 28px;
-    width: var(--side);
-    height: var(--side);
-    flex: none;
+    --side: 26px;
+    width: var(--side); height: var(--side); flex: none;
     background: var(--ink);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
   }
   .mark::before {
     content: "";
-    width: 62%;
-    height: 62%;
+    width: 62%; height: 62%;
     background: var(--paper);
     clip-path: polygon(0% 0%,100% 0%,100% 17%,31% 83%,100% 83%,100% 100%,0% 100%,0% 83%,69% 17%,0% 17%);
   }
@@ -141,501 +140,360 @@
   .mark.on-ink::before { background: var(--ink); }
 
   .signature {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    font-weight: 600;
-    font-size: 24px;
-    letter-spacing: 0.24em;
+    display: inline-flex; align-items: center; gap: 11px;
+    font-weight: 700; font-size: 22px; letter-spacing: 0.24em;
     text-decoration: none;
   }
 
   /* ---------- Header ---------- */
   header {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    background: rgba(245, 244, 241, 0.94);
-    backdrop-filter: blur(6px);
+    position: sticky; top: 0; z-index: 30;
+    background: rgba(245, 244, 241, 0.88);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
   }
   header .wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-block: 20px;
-    gap: 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding-block: 16px; gap: 24px;
   }
-  nav { display: flex; align-items: center; gap: 36px; }
-  nav a { text-decoration: none; font-size: 15px; color: var(--ink-soft); }
+  nav { display: flex; align-items: center; gap: 32px; }
+  nav a { text-decoration: none; font-size: 14.5px; font-weight: 500; color: var(--ink-soft); }
   nav a:hover { color: var(--amber); }
-  .nav-links { display: flex; gap: 36px; }
+  .nav-links { display: flex; gap: 32px; }
 
   .btn {
     font-family: var(--font-body);
-    font-weight: 600;
-    font-size: 14px;
-    letter-spacing: 0.02em;
-    text-decoration: none;
-    padding: 12px 22px;
-    display: inline-block;
-    border: 1px solid var(--ink);
-    color: var(--ink);
-    background: transparent;
-    transition: background 0.15s ease, color 0.15s ease;
+    font-weight: 600; font-size: 14px; letter-spacing: 0.01em;
+    text-decoration: none; padding: 11px 20px;
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1px solid var(--ink); color: var(--ink); background: transparent;
+    transition: background .15s ease, color .15s ease, transform .15s ease;
   }
   .btn:hover { background: var(--ink); color: var(--paper); }
   .btn.solid { background: var(--ink); color: var(--paper); }
-  .btn.solid:hover { background: var(--ink-soft); }
+  .btn.solid:hover { background: var(--ink-soft); transform: translateY(-1px); }
+  .btn .arrow { width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-top: 1.5px solid currentColor; transform: rotate(45deg); }
 
   /* ---------- Hero ---------- */
-  .hero { padding-block: 96px 64px; }
+  .hero { padding-block: 76px 56px; }
   .hero-grid {
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 72px;
+    grid-template-columns: 1.02fr 0.98fr;
+    gap: 64px;
     align-items: center;
   }
-  .hero .label { margin-bottom: 28px; display: block; }
+  .hero .label { margin-bottom: 24px; }
   .hero h1 {
-    font-size: clamp(34px, 4.4vw, 54px);
-    max-width: 16ch;
-    line-height: 1.12;
+    font-size: clamp(38px, 5.2vw, 66px);
+    line-height: 1.04;
+    max-width: 15ch;
   }
   .hero .sub {
-    margin-top: 28px;
-    max-width: 52ch;
-    font-size: 19px;
+    margin-top: 24px; max-width: 48ch;
+    font-size: 17.5px; color: var(--text-secondary); line-height: 1.6;
   }
-  .hero .actions {
-    margin-top: 40px;
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
+  .hero .actions { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
 
-  /* ---------- Diagrama do hero ---------- */
-  .ledger { display: flex; flex-direction: column; gap: 18px; }
-  .ledger-grid {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    gap: 8px;
+  /* ---------- Diagrama de arquitetura ---------- */
+  .arch { border: 1px solid var(--line); background: var(--white); padding: 22px; }
+  .arch-head {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 14px; margin-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--font-mono); font-size: 10.5px;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-secondary);
   }
-  .ledger-grid i {
-    display: block;
-    aspect-ratio: 1;
-    border: 2px solid var(--line);
-    background: transparent;
-    animation: ledger-fill 6s linear infinite;
-    animation-delay: calc(var(--col) * 0.32s);
+  .arch-head .live { display: inline-flex; align-items: center; gap: 7px; }
+  .arch-head .dot { width: 6px; height: 6px; background: var(--amber); animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .25; } }
+  .arch svg { display: block; width: 100%; height: auto; }
+  .arch .node-box { fill: var(--white); stroke: var(--ink); stroke-width: 1.4; }
+  .arch .node-core { fill: var(--ink); }
+  .arch .node-label { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .12em; fill: var(--ink-soft); text-transform: uppercase; }
+  .arch .node-label.inv { fill: var(--paper); }
+  .arch .wire { fill: none; stroke: var(--line-strong); stroke-width: 1.4; }
+  .arch .flow {
+    fill: none; stroke: var(--amber); stroke-width: 2.4;
+    stroke-dasharray: 7 260; stroke-dashoffset: 267;
+    animation: flow 2.6s linear infinite;
   }
-  @keyframes ledger-fill {
-    0%, 7%     { border-color: var(--line); background: transparent; }
-    9%         { border-color: var(--amber); background: var(--amber); }
-    12%, 52%   { border-color: var(--ink); background: var(--ink); }
-    60%, 100%  { border-color: var(--line); background: transparent; }
-  }
-  .ledger-caption {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--text-secondary);
-    border-top: 1px solid var(--line);
-    padding-top: 14px;
-  }
+  @keyframes flow { to { stroke-dashoffset: 0; } }
 
-  .scope {
-    margin-top: 72px;
-    border-top: 1px solid var(--line);
-    padding-top: 24px;
+  /* ---------- Ticker ---------- */
+  .ticker {
+    border-block: 1px solid var(--line);
+    background: var(--paper-support);
+    overflow: hidden;
+    padding-block: 13px;
   }
-  .scope .label { display: block; margin-bottom: 16px; }
-  .scope ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px 40px;
+  .ticker-track { display: flex; width: max-content; animation: marquee 34s linear infinite; }
+  .ticker-track span {
+    font-family: var(--font-mono); font-size: 11.5px;
+    letter-spacing: .18em; text-transform: uppercase; color: var(--text-secondary);
+    padding-inline: 26px; white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 26px;
   }
-  .scope li {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-secondary);
-  }
+  .ticker-track span::after { content: ""; width: 5px; height: 5px; background: var(--line-strong); }
+  @keyframes marquee { to { transform: translateX(-50%); } }
 
   /* ---------- Shell de seção ---------- */
-  section { padding-block: 88px; }
-  .section-head { max-width: 68ch; margin-bottom: 56px; }
-  .section-head .label { margin-bottom: 18px; display: block; }
-  .section-head h2 { font-size: clamp(26px, 3.4vw, 38px); }
-  .section-head .sub { margin-top: 18px; color: var(--text-secondary); font-size: 17px; max-width: 62ch; }
+  section { padding-block: 76px; }
+  .section-head { margin-bottom: 44px; max-width: 64ch; }
+  .section-head .label { margin-bottom: 16px; }
+  .section-head h2 { font-size: clamp(28px, 3.6vw, 44px); line-height: 1.08; }
+  .section-head .sub { margin-top: 16px; color: var(--text-secondary); font-size: 16.5px; max-width: 60ch; }
 
-  /* ---------- Grades de cartões ---------- */
-  .grid {
-    display: grid;
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-  }
+  /* ---------- Cartões ---------- */
+  .grid { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
   .grid-2 { grid-template-columns: repeat(2, 1fr); }
   .grid-3 { grid-template-columns: repeat(3, 1fr); }
 
   .card {
-    background: var(--white);
-    padding: 40px 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .card h3 { font-size: 20px; }
-  .card p { color: var(--text-secondary); font-size: 15.5px; }
-
-  /* Símbolos — repertório da grade do Z, sempre em preto */
-  .glyph { width: 40px; height: 40px; flex: none; }
-  .glyph.square-full { background: var(--ink); }
-  .glyph.square-open { border: 6px solid var(--ink); }
-  .glyph.ring { border: 6px solid var(--ink); border-radius: 50%; }
-  .glyph.diamond { width: 30px; height: 30px; margin: 5px; background: var(--ink); transform: rotate(45deg); }
-  .glyph.half { background: linear-gradient(135deg, var(--ink) 0 50%, transparent 50% 100%); }
-  .glyph.bars { display: flex; flex-direction: column; gap: 5px; }
-  .glyph.bars i { display: block; height: 7px; background: var(--ink); }
-  .glyph.bars i:nth-child(1) { width: 100%; }
-  .glyph.bars i:nth-child(2) { width: 70%; }
-  .glyph.bars i:nth-child(3) { width: 40%; }
-  .glyph.grid2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 5px;
-  }
-  .glyph.grid2 i { display: block; background: var(--ink); }
-
-  /* ---------- Banda escura (segmentos) ---------- */
-  .band {
-    background: var(--ink);
-    color: var(--on-ink);
+    background: var(--white); padding: 30px 28px 32px;
+    display: flex; flex-direction: column; gap: 14px;
+    transition: background .18s ease;
     position: relative;
   }
-  .band::before {
-    content: "";
-    position: absolute;
-    left: 0; right: 0; top: 0;
-    height: 6px;
-    background: var(--on-ink-line);
+  .card:hover { background: var(--paper-support); }
+  .card .idx {
+    font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .16em;
+    color: var(--text-secondary);
   }
-  .band h2 { color: var(--paper); font-size: clamp(24px, 3vw, 34px); }
-  .band .section-head { margin-bottom: 44px; }
+  .card:hover .idx { color: var(--amber); }
+  .card h3 { font-size: 18.5px; letter-spacing: -0.015em; }
+  .card p { color: var(--text-secondary); font-size: 15px; line-height: 1.55; }
+  .card .glyph { width: 34px; height: 34px; flex: none; margin-bottom: 2px; }
+  .glyph.square-full { background: var(--ink); }
+  .glyph.square-open { border: 5px solid var(--ink); }
+  .glyph.ring { border: 5px solid var(--ink); border-radius: 50%; }
+  .glyph.diamond { width: 26px; height: 26px; margin: 4px 4px 6px; background: var(--ink); transform: rotate(45deg); }
+  .glyph.half { background: linear-gradient(135deg, var(--ink) 0 50%, transparent 50% 100%); }
+  .glyph.bars { display: flex; flex-direction: column; gap: 5px; justify-content: center; }
+  .glyph.bars i { display: block; height: 6px; background: var(--ink); }
+  .glyph.bars i:nth-child(1) { width: 100%; }
+  .glyph.bars i:nth-child(2) { width: 68%; }
+  .glyph.bars i:nth-child(3) { width: 38%; }
+  .glyph.grid2 { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 5px; }
+  .glyph.grid2 i { display: block; background: var(--ink); }
+
+  /* ---------- Console (visual de produto) ---------- */
+  .runtime .wrap { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: 56px; align-items: center; }
+  .runtime .wrap > * { min-width: 0; }
+  .console { background: var(--ink); border: 1px solid var(--ink); min-width: 0; }
+  .console-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 13px 18px; border-bottom: 1px solid var(--on-ink-line);
+    font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--on-ink-label);
+  }
+  .console-bar .tag { color: var(--amber); }
+  .console-body {
+    padding: 18px 18px 22px;
+    font-family: var(--font-mono); font-size: 12.5px; line-height: 1.9;
+    overflow-x: auto;
+  }
+  .console-body .ln {
+    display: grid; grid-template-columns: 62px 78px 1fr auto; gap: 14px;
+    color: var(--on-ink-label); white-space: nowrap;
+    border-left: 2px solid transparent; padding-left: 12px;
+    animation: scan 12s linear infinite;
+  }
+  .console-body .ln .op { color: var(--on-ink); }
+  .console-body .ln .val { color: var(--paper); text-align: right; }
+  .console-body .ln:nth-child(1) { animation-delay: 0s; }
+  .console-body .ln:nth-child(2) { animation-delay: 2s; }
+  .console-body .ln:nth-child(3) { animation-delay: 4s; }
+  .console-body .ln:nth-child(4) { animation-delay: 6s; }
+  .console-body .ln:nth-child(5) { animation-delay: 8s; }
+  .console-body .ln:nth-child(6) { animation-delay: 10s; }
+  @keyframes scan {
+    0%, 14%  { border-left-color: var(--amber); background: rgba(181,122,32,.10); }
+    17%,100% { border-left-color: transparent; background: transparent; }
+  }
+  .console-foot {
+    border-top: 1px solid var(--on-ink-line); padding: 12px 18px;
+    font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--on-ink-label);
+    display: flex; justify-content: space-between; gap: 16px;
+  }
+  .caret { display: inline-block; width: 7px; height: 13px; background: var(--amber); vertical-align: -2px; animation: blink 1.1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* ---------- Banda escura ---------- */
+  .band { background: var(--ink); color: var(--on-ink); }
+  .band h2 { color: var(--paper); }
   .band .section-head .sub { color: var(--on-ink); }
   .segments {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--on-ink-line);
-    border: 1px solid var(--on-ink-line);
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: var(--on-ink-line); border: 1px solid var(--on-ink-line);
   }
   .segments li {
-    background: var(--ink);
-    padding: 26px 24px;
-    font-family: var(--font-mono);
-    font-size: 12.5px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--on-ink);
+    background: var(--ink); padding: 22px 20px;
+    font-family: var(--font-mono); font-size: 12px;
+    letter-spacing: .14em; text-transform: uppercase; color: var(--on-ink);
+    transition: background .18s ease, color .18s ease;
   }
+  .segments li:hover { background: #141416; color: var(--paper); }
 
   /* ---------- Processo ---------- */
-  .process-list { display: flex; flex-direction: column; }
   .process-item {
-    display: grid;
-    grid-template-columns: 100px 1fr 180px;
-    gap: 32px;
-    padding-block: 32px;
-    border-top: 1px solid var(--line);
-    align-items: start;
+    display: grid; grid-template-columns: 84px 1fr 180px;
+    gap: 28px; padding-block: 26px;
+    border-top: 1px solid var(--line); align-items: start;
+    transition: background .18s ease;
   }
   .process-item:last-child { border-bottom: 1px solid var(--line); }
+  .process-item:hover { background: var(--paper-support); }
   .process-item .num {
-    font-family: var(--font-mono);
-    font-size: 14px;
-    color: var(--amber);
-    letter-spacing: 0.1em;
-    padding-top: 4px;
+    font-family: var(--font-mono); font-size: 13px; color: var(--amber);
+    letter-spacing: .1em; padding-top: 3px;
   }
-  .process-item h3 { font-size: 20px; margin-bottom: 10px; }
-  .process-item p { color: var(--text-secondary); font-size: 16px; max-width: 62ch; }
+  .process-item h3 { font-size: 18.5px; margin-bottom: 8px; }
+  .process-item p { color: var(--text-secondary); font-size: 15.5px; max-width: 62ch; }
   .process-item .duration {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-secondary);
-    padding-top: 6px;
-    text-align: right;
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--text-secondary);
+    padding-top: 5px; text-align: right;
   }
 
   /* ---------- Sobre ---------- */
   .sobre { background: var(--ink); color: var(--on-ink); }
-  .sobre .wrap {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 64px;
-    align-items: start;
-  }
-  .sobre .label { color: var(--amber); display: block; margin-bottom: 18px; }
-  .sobre h2 { color: var(--paper); font-size: clamp(26px, 3.4vw, 36px); margin-bottom: 24px; }
-  .sobre p { color: var(--on-ink); font-size: 16.5px; }
-  .sobre p + p { margin-top: 18px; }
-  .fact-list { display: flex; flex-direction: column; gap: 24px; }
-  .fact { border-top: 1px solid var(--on-ink-line); padding-top: 16px; }
-  .fact .label { color: var(--on-ink-label); margin-bottom: 8px; display: block; }
-  .fact strong { font-size: 17px; font-weight: 500; color: var(--paper); }
+  .sobre .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: start; }
+  .sobre .label { color: var(--amber); margin-bottom: 16px; }
+  .sobre h2 { color: var(--paper); font-size: clamp(26px, 3.2vw, 38px); margin-bottom: 20px; line-height: 1.12; }
+  .sobre p { color: var(--on-ink); font-size: 16px; line-height: 1.6; }
+  .sobre p + p { margin-top: 16px; }
+  .fact-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--on-ink-line); border: 1px solid var(--on-ink-line); }
+  .fact { background: var(--ink); padding: 22px 20px; }
+  .fact .label { color: var(--on-ink-label); margin-bottom: 8px; }
+  .fact strong { font-size: 15.5px; font-weight: 500; color: var(--paper); display: block; }
 
   /* ---------- FAQ ---------- */
   .faq { border-top: 1px solid var(--line); }
-  .faq details {
-    border-bottom: 1px solid var(--line);
-    padding-block: 24px;
-  }
+  .faq details { border-bottom: 1px solid var(--line); padding-block: 20px; }
   .faq summary {
-    cursor: pointer;
-    list-style: none;
-    font-size: 18px;
-    font-weight: 500;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
+    cursor: pointer; list-style: none; font-size: 17px; font-weight: 500;
+    display: flex; justify-content: space-between; align-items: center; gap: 24px;
   }
   .faq summary::-webkit-details-marker { display: none; }
   .faq summary::after {
-    content: "";
-    flex: none;
-    width: 14px;
-    height: 14px;
-    border-right: 2px solid var(--ink);
-    border-bottom: 2px solid var(--ink);
-    transform: rotate(45deg) translate(-3px, -3px);
-    transition: transform 0.2s ease;
+    content: ""; flex: none; width: 12px; height: 12px;
+    border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+    transform: rotate(45deg) translate(-3px, -3px); transition: transform .2s ease;
   }
-  .faq details[open] summary::after { transform: rotate(225deg) translate(-3px, -3px); }
-  .faq details p {
-    margin-top: 16px;
-    color: var(--text-secondary);
-    font-size: 16px;
-    max-width: 68ch;
-  }
+  .faq details[open] summary { color: var(--amber); }
+  .faq details[open] summary::after { transform: rotate(225deg) translate(-3px, -3px); border-color: var(--amber); }
+  .faq details p { margin-top: 14px; color: var(--text-secondary); font-size: 15.5px; max-width: 70ch; }
 
   /* ---------- Tratamento de dados ---------- */
   .trust { background: var(--paper-support); }
-  .trust-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px 56px;
-  }
-  .trust-item { border-top: 2px solid var(--ink); padding-top: 20px; }
-  .trust-item h3 { font-size: 18px; margin-bottom: 10px; }
-  .trust-item p { color: var(--text-secondary); font-size: 15.5px; max-width: 46ch; }
+  .trust-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+  .trust-item { border-top: 2px solid var(--ink); padding-top: 18px; }
+  .trust-item h3 { font-size: 16.5px; margin-bottom: 8px; }
+  .trust-item p { color: var(--text-secondary); font-size: 14.5px; line-height: 1.55; }
 
-  /* ---------- Formulário ---------- */
-  .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+  /* ---------- Contato ---------- */
+  .cta-inner {
+    border: 1px solid var(--ink); padding: 52px;
+    display: grid; grid-template-columns: 1fr 1.1fr; gap: 52px; align-items: start;
+    position: relative; overflow: hidden;
   }
-  .field { display: flex; flex-direction: column; gap: 8px; }
+  .cta-inner::before { content: ""; position: absolute; left: 0; top: 0; width: 120px; height: 6px; background: var(--amber); }
+  .cta-inner::after { content: ""; position: absolute; left: 120px; top: 0; right: 0; height: 6px; background: var(--line); }
+  .cta-inner h2 { font-size: clamp(26px, 3.2vw, 36px); max-width: 22ch; line-height: 1.1; }
+  .cta-inner p { margin-top: 16px; color: var(--text-secondary); font-size: 16px; max-width: 44ch; }
+  .email { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .08em; color: var(--text-secondary); text-decoration: none; }
+  .email:hover { color: var(--amber); }
+
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .field { display: flex; flex-direction: column; gap: 7px; }
   .field.full { grid-column: 1 / -1; }
   .field label {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--text-secondary);
+    font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--text-secondary);
   }
-  .field input,
-  .field textarea {
-    font-family: var(--font-body);
-    font-weight: 300;
-    font-size: 16px;
-    color: var(--ink-soft);
-    background: var(--white);
-    border: 1px solid var(--line);
-    border-radius: 0;
-    padding: 13px 14px;
-    width: 100%;
+  .field input, .field textarea {
+    font-family: var(--font-body); font-weight: 400; font-size: 15.5px;
+    color: var(--ink-soft); background: var(--white);
+    border: 1px solid var(--line); border-radius: 0; padding: 12px 13px; width: 100%;
+    transition: border-color .15s ease;
   }
-  .field textarea { resize: vertical; min-height: 104px; }
-  .field input:focus,
-  .field textarea:focus { outline: 2px solid var(--amber); outline-offset: 1px; border-color: var(--ink); }
+  .field textarea { resize: vertical; min-height: 92px; }
+  .field input:hover, .field textarea:hover { border-color: var(--line-strong); }
   .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-  .form-foot {
-    margin-top: 24px;
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-  .form-note {
-    font-size: 13.5px;
-    color: var(--text-secondary);
-    max-width: 44ch;
-  }
-  .form-status {
-    margin-top: 18px;
-    font-size: 15px;
-    line-height: 1.5;
-  }
+  .form-foot { margin-top: 20px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .form-note { font-size: 13px; color: var(--text-secondary); max-width: 40ch; }
+  .form-status { margin-top: 16px; font-size: 14.5px; line-height: 1.5; }
   .form-status:empty { margin-top: 0; }
-  .form-status.ok { color: var(--ink); border-left: 2px solid var(--amber); padding-left: 14px; }
-  .form-status.err { color: var(--ink); border-left: 2px solid var(--ink); padding-left: 14px; }
+  .form-status.ok { border-left: 2px solid var(--amber); padding-left: 12px; }
+  .form-status.err { border-left: 2px solid var(--ink); padding-left: 12px; }
   button.btn { cursor: pointer; }
-  button.btn[disabled] { opacity: 0.55; cursor: progress; }
-
-  /* ---------- CTA ---------- */
-  .cta-inner {
-    border: 1px solid var(--ink);
-    padding: 64px;
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    gap: 56px;
-    align-items: start;
-    position: relative;
-    overflow: hidden;
-  }
-  .cta-inner::before {
-    content: "";
-    position: absolute;
-    left: 0; top: 0;
-    width: 120px;
-    height: 6px;
-    background: var(--amber);
-  }
-  .cta-inner::after {
-    content: "";
-    position: absolute;
-    left: 120px; top: 0; right: 0;
-    height: 6px;
-    background: var(--line);
-  }
-  .cta-inner h2 { font-size: clamp(24px, 3vw, 32px); max-width: 24ch; }
-  .cta-inner p { margin-top: 18px; color: var(--text-secondary); font-size: 16.5px; max-width: 46ch; }
-  .email {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    letter-spacing: 0.08em;
-    color: var(--text-secondary);
-    text-decoration: none;
-  }
-  .email:hover { color: var(--ink); }
+  button.btn[disabled] { opacity: .55; cursor: progress; }
 
   /* ---------- Rodapé ---------- */
-  footer {
-    border-top: 1px solid var(--line);
-    padding-block: 56px 40px;
-  }
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr;
-    gap: 48px;
-    padding-bottom: 40px;
-  }
+  footer { border-top: 1px solid var(--line); padding-block: 48px 32px; }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 44px; padding-bottom: 36px; }
   .footer-col h4 {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--text-secondary);
-    margin: 0 0 18px;
+    font-family: var(--font-mono); font-size: 10.5px; font-weight: 500;
+    letter-spacing: .18em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 16px;
   }
-  .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-  .footer-col a { text-decoration: none; font-size: 15px; }
+  .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+  .footer-col a { text-decoration: none; font-size: 14.5px; }
   .footer-col a:hover { color: var(--amber); }
-  .footer-col p,
-  .footer-col li.muted { font-size: 15px; color: var(--text-secondary); }
-  .footer-brand p {
-    margin-top: 20px;
-    color: var(--text-secondary);
-    font-size: 15px;
-    max-width: 34ch;
-  }
+  .footer-col li.muted { font-size: 14.5px; color: var(--text-secondary); }
+  .footer-brand p { margin-top: 16px; color: var(--text-secondary); font-size: 14.5px; max-width: 32ch; }
   .footer-base {
-    border-top: 1px solid var(--line);
-    padding-top: 24px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-    font-family: var(--font-mono);
-    font-size: 11.5px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-secondary);
+    border-top: 1px solid var(--line); padding-top: 20px;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--text-secondary);
   }
 
   /* ---------- CTA fixo (mobile) ---------- */
   .mobile-cta {
-    display: none;
-    position: fixed;
-    left: 0; right: 0; bottom: 0;
-    z-index: 30;
-    background: var(--ink);
-    padding: 14px 24px;
-    padding-bottom: calc(14px + env(safe-area-inset-bottom, 0px));
-    text-align: center;
+    display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+    background: var(--ink); padding: 14px var(--gutter);
+    padding-bottom: calc(14px + env(safe-area-inset-bottom, 0px)); text-align: center;
   }
-  .mobile-cta a {
-    color: var(--paper);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 15px;
-    letter-spacing: 0.02em;
-  }
+  .mobile-cta a { color: var(--paper); text-decoration: none; font-weight: 600; font-size: 15px; }
 
-  @media (max-width: 980px) {
-    .hero-grid { grid-template-columns: 1fr; gap: 56px; }
-    .hero h1 { max-width: 18ch; }
-    .process-item { grid-template-columns: 72px 1fr; }
-    .process-item .duration { grid-column: 2; text-align: left; padding-top: 0; margin-top: 12px; }
-    .cta-inner { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-    .sobre .wrap { grid-template-columns: 1fr; gap: 48px; }
+  @media (max-width: 1040px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .hero h1 { max-width: 16ch; }
+    .runtime .wrap { grid-template-columns: 1fr; gap: 40px; }
+    .sobre .wrap { grid-template-columns: 1fr; gap: 40px; }
+    .trust-list { grid-template-columns: repeat(2, 1fr); }
+    .cta-inner { grid-template-columns: 1fr; gap: 40px; }
+    .process-item { grid-template-columns: 62px 1fr; }
+    .process-item .duration { grid-column: 2; text-align: left; padding-top: 0; margin-top: 10px; }
     .segments { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
   }
 
   @media (max-width: 720px) {
-    section { padding-block: 64px; }
-    .hero { padding-block: 64px 48px; }
+    section { padding-block: 56px; }
+    .hero { padding-block: 48px 40px; }
     .grid-2, .grid-3 { grid-template-columns: 1fr; }
-    .trust-list { grid-template-columns: 1fr; gap: 32px; }
-    .form-grid { grid-template-columns: 1fr; }
-    .ledger-grid { gap: 7px; }
-    .segments { grid-template-columns: 1fr; }
+    .segments, .trust-list, .form-grid, .fact-list { grid-template-columns: 1fr; }
     .nav-links { display: none; }
-    .cta-inner { padding: 40px 26px; }
-    .footer-grid { grid-template-columns: 1fr; gap: 36px; }
-    .mobile-cta { display: block; }
-    body { padding-bottom: 72px; }
     header .wrap .btn { display: none; }
+    .cta-inner { padding: 34px 22px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .mobile-cta { display: block; }
+    body { padding-bottom: 70px; }
+    .console-body { font-size: 11.5px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    * { transition-duration: 0.01ms !important; }
-    .ledger-grid i { animation: none; }
-    .ledger-grid i:nth-child(10n+1),
-    .ledger-grid i:nth-child(10n+2),
-    .ledger-grid i:nth-child(10n+3),
-    .ledger-grid i:nth-child(10n+4),
-    .ledger-grid i:nth-child(10n+5),
-    .ledger-grid i:nth-child(10n+6) { border-color: var(--ink); background: var(--ink); }
-    .ledger-grid i:nth-child(10n+7) { border-color: var(--amber); background: var(--amber); }
+    *, *::before, *::after {
+      animation-duration: .01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .01ms !important;
+    }
+    .ticker-track { animation: none; }
+    .console-body .ln:nth-child(2) { border-left-color: var(--amber); background: rgba(181,122,32,.10); }
   }
 </style>
 </head>
@@ -645,17 +503,16 @@
 
 <header>
   <div class="wrap">
-    <a href="#topo" class="signature" aria-label="Zelve — início">
-      <span class="mark"></span>ELVE
-    </a>
+    <a href="#topo" class="signature" aria-label="Zelve — início"><span class="mark"></span>ELVE</a>
     <nav aria-label="Navegação principal">
       <div class="nav-links">
         <a href="#problemas">Problemas</a>
+        <a href="#execucao">Execução</a>
         <a href="#servicos">Serviços</a>
-        <a href="#processo">Como trabalhamos</a>
+        <a href="#processo">Processo</a>
         <a href="#sobre">Sobre</a>
       </div>
-      <a href="#contato" class="btn solid">Agendar conversa</a>
+      <a href="#contato" class="btn solid">Agendar conversa <span class="arrow"></span></a>
     </nav>
   </div>
 </header>
@@ -665,66 +522,134 @@
     <div class="wrap">
       <div class="hero-grid">
         <div>
-          <span class="label neutral">Consultoria em transformação digital</span>
-          <h1>Processos automatizados sustentam operações que não podem parar.</h1>
-          <p class="sub">A Zelve projeta e implementa automação de processos, integração de sistemas e estratégia digital para empresas de médio e grande porte — unindo inteligência artificial, machine learning e gestão clássica em um único trabalho de consultoria.</p>
+          <span class="label">Consultoria em transformação digital</span>
+          <h1>Processos que rodam sozinhos, integrados aos sistemas que você já usa.</h1>
+          <p class="sub">A Zelve projeta e implementa automação de processos, integração de sistemas e estratégia digital para empresas de médio e grande porte — unindo inteligência artificial, machine learning e gestão clássica.</p>
           <div class="actions">
-            <a href="#contato" class="btn solid">Agendar conversa</a>
-            <a href="#processo" class="btn">Como trabalhamos</a>
+            <a href="#contato" class="btn solid">Agendar conversa <span class="arrow"></span></a>
+            <a href="#execucao" class="btn">Ver como funciona</a>
           </div>
         </div>
-        <div class="ledger" role="img" aria-label="Representação ilustrativa de lançamentos operacionais sendo processados automaticamente, da esquerda para a direita.">
-          <div class="ledger-grid" aria-hidden="true">
-            <i style="--col:1"></i><i style="--col:2"></i><i style="--col:3"></i><i style="--col:4"></i><i style="--col:5"></i><i style="--col:6"></i><i style="--col:7"></i><i style="--col:8"></i><i style="--col:9"></i><i style="--col:10"></i>
-            <i style="--col:1"></i><i style="--col:2"></i><i style="--col:3"></i><i style="--col:4"></i><i style="--col:5"></i><i style="--col:6"></i><i style="--col:7"></i><i style="--col:8"></i><i style="--col:9"></i><i style="--col:10"></i>
-            <i style="--col:1"></i><i style="--col:2"></i><i style="--col:3"></i><i style="--col:4"></i><i style="--col:5"></i><i style="--col:6"></i><i style="--col:7"></i><i style="--col:8"></i><i style="--col:9"></i><i style="--col:10"></i>
-            <i style="--col:1"></i><i style="--col:2"></i><i style="--col:3"></i><i style="--col:4"></i><i style="--col:5"></i><i style="--col:6"></i><i style="--col:7"></i><i style="--col:8"></i><i style="--col:9"></i><i style="--col:10"></i>
-            <i style="--col:1"></i><i style="--col:2"></i><i style="--col:3"></i><i style="--col:4"></i><i style="--col:5"></i><i style="--col:6"></i><i style="--col:7"></i><i style="--col:8"></i><i style="--col:9"></i><i style="--col:10"></i>
-            <i style="--col:1"></i><i style="--col:2"></i><i style="--col:3"></i><i style="--col:4"></i><i style="--col:5"></i><i style="--col:6"></i><i style="--col:7"></i><i style="--col:8"></i><i style="--col:9"></i><i style="--col:10"></i>
+
+        <div class="arch">
+          <div class="arch-head">
+            <span>Arquitetura de integração</span>
+            <span class="live"><span class="dot"></span>Em execução</span>
           </div>
-          <span class="ledger-caption">Representação ilustrativa</span>
+          <svg viewBox="0 0 520 344" role="img" aria-label="Diagrama ilustrativo: quatro fontes de dados — banco, adquirente, ERP e WhatsApp — convergem para um núcleo de automação, que devolve lançamentos ao ERP e um relatório de exceções.">
+            <g class="wires">
+              <path class="wire" d="M130 60 H165 V175 H200"/>
+              <path class="wire" d="M130 140 H165 V190 H200"/>
+              <path class="wire" d="M130 220 H165 V210 H200"/>
+              <path class="wire" d="M130 300 H165 V225 H200"/>
+              <path class="wire" d="M320 185 H355 V140 H390"/>
+              <path class="wire" d="M320 215 H355 V260 H390"/>
+            </g>
+            <g class="flows">
+              <path class="flow" style="animation-delay:0s"    d="M130 60 H165 V175 H200"/>
+              <path class="flow" style="animation-delay:.45s"  d="M130 140 H165 V190 H200"/>
+              <path class="flow" style="animation-delay:.9s"   d="M130 220 H165 V210 H200"/>
+              <path class="flow" style="animation-delay:1.35s" d="M130 300 H165 V225 H200"/>
+              <path class="flow" style="animation-delay:1.7s"  d="M320 185 H355 V140 H390"/>
+              <path class="flow" style="animation-delay:2.05s" d="M320 215 H355 V260 H390"/>
+            </g>
+
+            <rect class="node-box" x="0" y="40"  width="130" height="40"/>
+            <text class="node-label" x="14" y="65">Banco</text>
+            <rect class="node-box" x="0" y="120" width="130" height="40"/>
+            <text class="node-label" x="14" y="145">Adquirente</text>
+            <rect class="node-box" x="0" y="200" width="130" height="40"/>
+            <text class="node-label" x="14" y="225">ERP</text>
+            <rect class="node-box" x="0" y="280" width="130" height="40"/>
+            <text class="node-label" x="14" y="305">WhatsApp</text>
+
+            <rect class="node-core" x="200" y="160" width="120" height="80"/>
+            <text class="node-label inv" x="216" y="196">Núcleo de</text>
+            <text class="node-label inv" x="216" y="214">automação</text>
+
+            <rect class="node-box" x="390" y="120" width="130" height="40"/>
+            <text class="node-label" x="404" y="145">ERP atualizado</text>
+            <rect class="node-box" x="390" y="240" width="130" height="40"/>
+            <text class="node-label" x="404" y="265">Exceções</text>
+          </svg>
         </div>
-      </div>
-      <div class="scope">
-        <span class="label neutral">Frentes de atuação</span>
-        <ul>
-          <li>Conciliação financeira</li>
-          <li>Integração de sistemas</li>
-          <li>Rotinas recorrentes</li>
-          <li>Atendimento e vendas</li>
-        </ul>
       </div>
     </div>
   </section>
+</main>
 
+<div class="ticker bleed" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Conciliação bancária</span><span>Integração de ERP</span><span>Emissão fiscal por API</span><span>Rebate de franquias</span><span>Fluxos de aprovação</span><span>Atendimento integrado</span><span>Relatórios recorrentes</span><span>Tratamento de exceções</span>
+    <span>Conciliação bancária</span><span>Integração de ERP</span><span>Emissão fiscal por API</span><span>Rebate de franquias</span><span>Fluxos de aprovação</span><span>Atendimento integrado</span><span>Relatórios recorrentes</span><span>Tratamento de exceções</span>
+  </div>
+</div>
+
+<main>
   <section id="problemas">
     <div class="wrap">
       <div class="section-head">
         <span class="label neutral">Onde a automação entra</span>
-        <h2>Quatro problemas operacionais concentram a maior parte do trabalho manual.</h2>
+        <h2>Quatro problemas concentram a maior parte do trabalho manual.</h2>
         <p class="sub">São padrões que se repetem em operações de médio e grande porte, independentemente do setor. O diagnóstico começa por identificar quais deles pesam mais na sua estrutura.</p>
       </div>
       <div class="grid grid-2">
         <article class="card">
           <div class="glyph grid2" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <span class="idx">01 / Dados dispersos</span>
           <h3>Sistemas que não conversam entre si</h3>
           <p>Extratos bancários, adquirentes e ERP mantidos em planilhas paralelas, com conferência manual linha a linha e um fechamento que depende sempre da mesma pessoa.</p>
         </article>
         <article class="card">
           <div class="glyph bars" aria-hidden="true"><i></i><i></i><i></i></div>
+          <span class="idx">02 / Reentrada de dados</span>
           <h3>Documentos e lançamentos digitados à mão</h3>
-          <p>Notas, faturas e registros redigitados em cada sistema. Cada reentrada de dado é uma chance de erro e um atraso no fechamento do período.</p>
+          <p>Notas, faturas e registros redigitados em cada sistema. Cada reentrada é uma chance de erro e um atraso no fechamento do período.</p>
         </article>
         <article class="card">
           <div class="glyph square-open" aria-hidden="true"></div>
-          <h3>Comunicações recorrentes montadas manualmente</h3>
-          <p>Relatórios, comunicados e cobranças periódicas que consomem horas todo mês para reunir dados, formatar e enviar — sempre no mesmo formato.</p>
+          <span class="idx">03 / Rotina recorrente</span>
+          <h3>Comunicações montadas manualmente todo mês</h3>
+          <p>Relatórios, comunicados e cobranças periódicas que consomem horas para reunir dados, formatar e enviar — sempre no mesmo formato.</p>
         </article>
         <article class="card">
           <div class="glyph ring" aria-hidden="true"></div>
+          <span class="idx">04 / Canal desconectado</span>
           <h3>Atendimento sem registro estruturado</h3>
-          <p>Conversas de vendas e suporte espalhadas por canais de mensagem, sem integração com o sistema onde a operação de fato é registrada.</p>
+          <p>Conversas de vendas e suporte espalhadas por canais de mensagem, sem integração com o sistema onde a operação é registrada.</p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="execucao" class="runtime">
+    <div class="wrap">
+      <div>
+        <div class="section-head" style="margin-bottom:28px;">
+          <span class="label neutral">Execução</span>
+          <h2>Uma rotina que levava a manhã inteira passa a rodar em minutos.</h2>
+          <p class="sub">Uma automação de conciliação lê os arquivos na origem, cruza os lançamentos, grava o resultado no ERP e separa o que precisa de decisão humana. O time deixa de conferir tudo e passa a tratar só as exceções.</p>
+        </div>
+        <a href="#processo" class="btn">Como chegamos até aqui</a>
+      </div>
+
+      <div class="console">
+        <div class="console-bar">
+          <span>conciliacao · execução diária</span>
+          <span class="tag">Representação ilustrativa</span>
+        </div>
+        <div class="console-body">
+          <div class="ln"><span>06:00:02</span><span class="op">entrada</span><span>extrato bancário · arquivo OFX</span><span class="val">1.284 linhas</span></div>
+          <div class="ln"><span>06:00:07</span><span class="op">entrada</span><span>adquirente · API de vendas</span><span class="val">1.309 linhas</span></div>
+          <div class="ln"><span>06:00:11</span><span class="op">cruzamento</span><span>banco × adquirente × ERP</span><span class="val">1.241 conciliados</span></div>
+          <div class="ln"><span>06:00:12</span><span class="op">exceção</span><span>divergências enviadas para revisão</span><span class="val">43 pendências</span></div>
+          <div class="ln"><span>06:00:19</span><span class="op">escrita</span><span>lançamentos criados no ERP</span><span class="val">1.241 registros</span></div>
+          <div class="ln"><span>06:00:21</span><span class="op">envio</span><span>resumo para o time financeiro</span><span class="val">concluído</span></div>
+        </div>
+        <div class="console-foot">
+          <span>tempo total · 19 segundos</span>
+          <span>intervenção humana · 43 exceções<span class="caret"></span></span>
+        </div>
       </div>
     </div>
   </section>
@@ -733,21 +658,24 @@
     <div class="wrap">
       <div class="section-head">
         <span class="label neutral">Serviços</span>
-        <h2>Três frentes de trabalho, um único objetivo: reduzir o custo da operação.</h2>
+        <h2>Três frentes, um único objetivo: reduzir o custo da operação.</h2>
       </div>
       <div class="grid grid-3">
         <article class="card">
           <div class="glyph square-full" aria-hidden="true"></div>
+          <span class="idx">Frente 01</span>
           <h3>Automação de processos</h3>
           <p>Mapeamento e automação de rotinas operacionais e financeiras — conciliação, tratamento de dados e fluxos de aprovação — para reduzir retrabalho manual e erro operacional.</p>
         </article>
         <article class="card">
           <div class="glyph half" aria-hidden="true"></div>
+          <span class="idx">Frente 02</span>
           <h3>Integração de sistemas</h3>
           <p>Conexão entre ERPs, planilhas, APIs e canais de atendimento, para que a informação circule entre as áreas sem reentrada manual de dados.</p>
         </article>
         <article class="card">
           <div class="glyph diamond" aria-hidden="true"></div>
+          <span class="idx">Frente 03</span>
           <h3>Estratégia digital</h3>
           <p>Diagnóstico e roteiro de adoção de IA e automação, priorizando os pontos de maior custo operacional antes da escolha da tecnologia.</p>
         </article>
@@ -755,7 +683,7 @@
     </div>
   </section>
 
-  <section class="band" id="segmentos">
+  <section class="band bleed" id="segmentos">
     <div class="wrap">
       <div class="section-head">
         <span class="label on-ink">Operações atendidas</span>
@@ -776,8 +704,8 @@
   <section id="processo">
     <div class="wrap">
       <div class="section-head">
-        <span class="label neutral">Como trabalhamos</span>
-        <h2>Um processo de quatro etapas, do diagnóstico à operação em produção.</h2>
+        <span class="label neutral">Processo</span>
+        <h2>Quatro etapas, do diagnóstico à operação em produção.</h2>
       </div>
       <div class="process-list">
         <div class="process-item">
@@ -816,31 +744,19 @@
     </div>
   </section>
 
-  <section id="sobre" class="sobre">
+  <section id="sobre" class="sobre bleed">
     <div class="wrap">
       <div>
         <span class="label">Sobre a Zelve</span>
-        <h2>Uma consultoria boutique, formada por quem já automatizou a própria operação.</h2>
+        <h2>Consultoria formada por quem já automatizou a própria operação.</h2>
         <p>A Zelve nasceu da experiência prática de automatizar rotinas financeiras e administrativas dentro de empresas em operação — antes de virar consultoria. O repertório vem de processos reais: conciliação entre adquirentes e ERP, geração automática de documentos fiscais por API, comunicados financeiros recorrentes para redes de franquias.</p>
         <p>Sediada em Florianópolis, SC, é formada por três sócios com histórico em dados, engenharia de software e gestão, e atende empresas de médio e grande porte que buscam reduzir custo operacional por meio de automação e integração de sistemas.</p>
       </div>
       <div class="fact-list">
-        <div class="fact">
-          <span class="label">Sede</span>
-          <strong>Florianópolis, SC</strong>
-        </div>
-        <div class="fact">
-          <span class="label">Fundação</span>
-          <strong>2026</strong>
-        </div>
-        <div class="fact">
-          <span class="label">Sócios</span>
-          <strong>Gunther, Paulo Lentz e Thiago Meller</strong>
-        </div>
-        <div class="fact">
-          <span class="label">Público atendido</span>
-          <strong>Empresas de médio e grande porte, B2B</strong>
-        </div>
+        <div class="fact"><span class="label">Sede</span><strong>Florianópolis, SC</strong></div>
+        <div class="fact"><span class="label">Fundação</span><strong>2026</strong></div>
+        <div class="fact"><span class="label">Sócios</span><strong>Gunther, Paulo Lentz e Thiago Meller</strong></div>
+        <div class="fact"><span class="label">Público</span><strong>Médio e grande porte, B2B</strong></div>
       </div>
     </div>
   </section>
@@ -876,29 +792,29 @@
     </div>
   </section>
 
-  <section class="trust" id="dados">
+  <section class="trust bleed" id="dados">
     <div class="wrap">
       <div class="section-head">
         <span class="label neutral">Tratamento de dados</span>
-        <h2>Automatizar um processo financeiro exige acesso a dados sensíveis.</h2>
+        <h2>Automatizar processo financeiro exige acesso a dados sensíveis.</h2>
         <p class="sub">Por isso as regras de acesso são definidas antes do diagnóstico começar, e não durante a implementação.</p>
       </div>
       <div class="trust-list">
         <div class="trust-item">
-          <h3>Acordo de confidencialidade</h3>
+          <h3>Confidencialidade</h3>
           <p>O trabalho começa com NDA assinado, cobrindo dados de clientes, fornecedores e informações financeiras da operação.</p>
         </div>
         <div class="trust-item">
-          <h3>Acesso mínimo necessário</h3>
-          <p>Cada integração usa credenciais próprias, com a menor permissão que o processo exige, revogáveis a qualquer momento pela empresa.</p>
+          <h3>Acesso mínimo</h3>
+          <p>Cada integração usa credenciais próprias, com a menor permissão que o processo exige, revogáveis a qualquer momento.</p>
         </div>
         <div class="trust-item">
-          <h3>Dados no ambiente do cliente</h3>
-          <p>As automações rodam na infraestrutura e nas contas da própria empresa. A Zelve não mantém cópia dos dados operacionais após a entrega.</p>
+          <h3>Dados no cliente</h3>
+          <p>As automações rodam na infraestrutura da própria empresa. A Zelve não mantém cópia dos dados operacionais após a entrega.</p>
         </div>
         <div class="trust-item">
-          <h3>Conformidade com a LGPD</h3>
-          <p>O tratamento de dados pessoais segue a Lei 13.709/2018, com registro das bases legais aplicáveis a cada fluxo automatizado.</p>
+          <h3>LGPD</h3>
+          <p>O tratamento de dados pessoais segue a Lei 13.709/2018, com registro das bases legais de cada fluxo automatizado.</p>
         </div>
       </div>
     </div>
@@ -910,7 +826,7 @@
         <div>
           <h2>Uma conversa de 30 minutos identifica onde a automação reduz custo primeiro.</h2>
           <p>Traga o processo que mais consome tempo da sua equipe hoje. A leitura inicial aponta o que dá para automatizar, o que isso exige e por onde começar.</p>
-          <p style="margin-top:20px;"><a href="mailto:thiago@zelve.com.br" class="email">thiago@zelve.com.br</a></p>
+          <p style="margin-top:18px;"><a href="mailto:thiago@zelve.com.br" class="email">thiago@zelve.com.br</a></p>
         </div>
         <form id="form-contato" novalidate>
           <div class="form-grid">
@@ -936,7 +852,7 @@
             </div>
           </div>
           <div class="form-foot">
-            <button type="submit" class="btn solid" id="btn-enviar">Enviar</button>
+            <button type="submit" class="btn solid" id="btn-enviar">Enviar <span class="arrow"></span></button>
             <p class="form-note">Os dados enviados são usados apenas para responder a este contato, conforme a LGPD.</p>
           </div>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
@@ -950,17 +866,16 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-col footer-brand">
-        <a href="#topo" class="signature" style="font-size:18px;" aria-label="Zelve — início">
-          <span class="mark" style="--side:22px;"></span>ELVE
-        </a>
+        <a href="#topo" class="signature" style="font-size:17px;" aria-label="Zelve — início"><span class="mark" style="--side:21px;"></span>ELVE</a>
         <p>Consultoria em transformação digital para empresas de médio e grande porte.</p>
       </div>
       <div class="footer-col">
         <h4>Navegação</h4>
         <ul>
           <li><a href="#problemas">Problemas</a></li>
+          <li><a href="#execucao">Execução</a></li>
           <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#processo">Como trabalhamos</a></li>
+          <li><a href="#processo">Processo</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#duvidas">Perguntas frequentes</a></li>
           <li><a href="#dados">Tratamento de dados</a></li>
