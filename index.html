@@ -1,288 +1,805 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zelve — Consultoria em Transformação Digital</title>
+<meta name="description" content="A Zelve projeta e implementa automação de processos, integração de sistemas e estratégia digital para empresas de médio e grande porte.">
+<link rel="canonical" href="https://www.zelve.com.br/">
+<meta name="theme-color" content="#F5F4F1">
 
-<html class="dark" lang="pt-BR"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Zelve | Cognitive Systems</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "primary-fixed-dim": "#12d7ef",
-                      "surface-container-lowest": "#000000",
-                      "on-tertiary-fixed": "#001835",
-                      "secondary-dim": "#b884ff",
-                      "on-secondary-container": "#dfc6ff",
-                      "on-tertiary": "#002a55",
-                      "inverse-on-surface": "#555557",
-                      "error-dim": "#d7383b",
-                      "on-secondary": "#2f0060",
-                      "inverse-primary": "#006976",
-                      "surface-container-highest": "#242629",
-                      "primary-dim": "#12d7ef",
-                      "tertiary-dim": "#5c9ffc",
-                      "on-primary-fixed": "#003a42",
-                      "on-surface-variant": "#ababad",
-                      "on-tertiary-container": "#001d3f",
-                      "surface-dim": "#0d0e10",
-                      "inverse-surface": "#fbf9fb",
-                      "surface-container-low": "#121316",
-                      "secondary-fixed": "#e0c7ff",
-                      "background": "#0d0e10",
-                      "tertiary-fixed-dim": "#64a4ff",
-                      "secondary-fixed-dim": "#d6b6ff",
-                      "error-container": "#9f0519",
-                      "surface-bright": "#2b2c2f",
-                      "surface-container-high": "#1e2022",
-                      "on-secondary-fixed-variant": "#6732aa",
-                      "error": "#ff716c",
-                      "tertiary-container": "#599cf9",
-                      "tertiary-fixed": "#80b2ff",
-                      "on-primary": "#00515b",
-                      "on-secondary-fixed": "#49068c",
-                      "on-primary-container": "#004750",
-                      "surface-container": "#181a1c",
-                      "outline-variant": "#47484a",
-                      "primary-container": "#1cdaf2",
-                      "on-error": "#490006",
-                      "tertiary": "#70aaff",
-                      "on-surface": "#fdfbfe",
-                      "secondary-container": "#5d26a0",
-                      "primary": "#48e7ff",
-                      "on-tertiary-fixed-variant": "#003971",
-                      "secondary": "#b884ff",
-                      "surface": "#0d0e10",
-                      "primary-fixed": "#37e5fe",
-                      "on-primary-fixed-variant": "#005964",
-                      "surface-variant": "#242629",
-                      "outline": "#757578",
-                      "on-error-container": "#ffa8a3",
-                      "on-background": "#fdfbfe",
-                      "surface-tint": "#48e7ff"
-              },
-              "borderRadius": {
-                      "DEFAULT": "1rem",
-                      "lg": "2rem",
-                      "xl": "3rem",
-                      "full": "9999px"
-              },
-              "fontFamily": {
-                      "headline": ["Space Grotesk"],
-                      "body": ["Manrope"],
-                      "label": ["Manrope"]
-              }
-            },
-          },
-        }
-    </script>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zelve Technologies">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://www.zelve.com.br/">
+<meta property="og:title" content="Zelve — Consultoria em Transformação Digital">
+<meta property="og:description" content="Automação de processos, integração de sistemas e estratégia digital para empresas de médio e grande porte.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Zelve — Consultoria em Transformação Digital">
+<meta name="twitter:description" content="Automação de processos, integração de sistemas e estratégia digital para empresas de médio e grande porte.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230B0B0C'/%3E%3Cpath d='M19 19L81 19L81 29.5L38.2 70.5L81 70.5L81 81L19 81L19 70.5L61.8 29.5L19 29.5Z' fill='%23F5F4F1'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Zelve Technologies",
+  "url": "https://www.zelve.com.br/",
+  "description": "Consultoria em transformação digital: automação de processos, integração de sistemas e estratégia digital para empresas de médio e grande porte.",
+  "email": "thiago@zelve.com.br",
+  "foundingDate": "2026",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Florianópolis",
+    "addressRegion": "SC",
+    "addressCountry": "BR"
+  },
+  "areaServed": "BR",
+  "knowsAbout": ["Automação de processos", "Integração de sistemas", "Estratégia digital", "Inteligência artificial aplicada"]
+}
+</script>
+
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            display: inline-block;
-            vertical-align: middle;
-        }
-        .ghost-border {
-            outline: 1px solid rgba(72, 231, 255, 0.15);
-        }
-        .core-glow-bg {
-            background: linear-gradient(135deg, #48e7ff 0%, #b884ff 100%);
-        }
-        .neural-grid {
-            background-image: radial-gradient(rgba(72, 231, 255, 0.1) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-        .glow-cyan {
-            box-shadow: 0 0 25px rgba(72, 231, 255, 0.2);
-        }
-        .glow-text-cyan {
-            text-shadow: 0 0 10px rgba(72, 231, 255, 0.5);
-        }
-    
-        @keyframes pulse-breathing {
-            0%, 100% { 
-                transform: scale(1); 
-                opacity: 0.9; 
-            }
-            50% { 
-                transform: scale(1.05); 
-                opacity: 1; 
-            }
-        }
-        .animate-pulse-breathing {
-            animation: pulse-breathing 8s ease-in-out infinite;
-            transform-origin: center;
-            will-change: transform, opacity;
-        }
-        @keyframes levitate-glow {
-            0%, 100% { transform: translateY(0); filter: drop-shadow(0 0 8px rgba(72, 231, 255, 0.15)); }
-            50% { transform: translateY(-5px); filter: drop-shadow(0 0 15px rgba(72, 231, 255, 0.3)); }
-        }
-        .animate-levitate-glow {
-            animation: levitate-glow 12s ease-in-out infinite;
-        }
-    </style>
+  :root {
+    --paper: #F5F4F1;
+    --paper-support: #EFEDE8;
+    --white: #FFFFFF;
+    --ink: #0B0B0C;
+    --ink-soft: #16171A;
+    --amber: #B57A20;
+    --amber-light: #F0E3CC;
+    --line: #DCDAD5;
+    --text-secondary: #6B6E73;
+    --on-ink: #C9CACC;
+    --on-ink-label: #8E9195;
+    --on-ink-line: #3A3B3E;
+    --font-body: 'Manrope', -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    --max: 1180px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    background: var(--paper);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink-soft);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    padding-inline: 24px;
+  }
+
+  h1, h2, h3 { font-weight: 500; letter-spacing: -0.01em; text-wrap: balance; margin: 0; }
+  p { margin: 0; }
+  a { color: inherit; }
+
+  a:focus-visible,
+  button:focus-visible,
+  summary:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 3px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 12px 20px;
+    font-size: 14px;
+    z-index: 100;
+  }
+  .skip-link:focus { left: 24px; top: 12px; }
+
+  .label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+  .label.neutral { color: var(--text-secondary); }
+  .label.on-ink { color: var(--on-ink-label); }
+
+  .wrap {
+    max-width: var(--max);
+    margin-inline: auto;
+  }
+
+  /* ---------- Marca ---------- */
+  .mark {
+    --side: 28px;
+    width: var(--side);
+    height: var(--side);
+    flex: none;
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mark::before {
+    content: "";
+    width: 62%;
+    height: 62%;
+    background: var(--paper);
+    clip-path: polygon(0% 0%,100% 0%,100% 17%,31% 83%,100% 83%,100% 100%,0% 100%,0% 83%,69% 17%,0% 17%);
+  }
+  .mark.on-ink { background: var(--paper); }
+  .mark.on-ink::before { background: var(--ink); }
+
+  .signature {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 0.24em;
+    text-decoration: none;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(245, 244, 241, 0.94);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 20px;
+    gap: 24px;
+  }
+  nav { display: flex; align-items: center; gap: 36px; }
+  nav a { text-decoration: none; font-size: 15px; color: var(--ink-soft); }
+  nav a:hover { color: var(--amber); }
+  .nav-links { display: flex; gap: 36px; }
+
+  .btn {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    padding: 12px 22px;
+    display: inline-block;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    background: transparent;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .btn:hover { background: var(--ink); color: var(--paper); }
+  .btn.solid { background: var(--ink); color: var(--paper); }
+  .btn.solid:hover { background: var(--ink-soft); }
+
+  /* ---------- Hero ---------- */
+  .hero { padding-block: 96px 64px; }
+  .hero .label { margin-bottom: 28px; display: block; }
+  .hero h1 {
+    font-size: clamp(34px, 5vw, 58px);
+    max-width: 15ch;
+    line-height: 1.12;
+  }
+  .hero .sub {
+    margin-top: 28px;
+    max-width: 58ch;
+    font-size: 19px;
+  }
+  .hero .actions {
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .scope {
+    margin-top: 72px;
+    border-top: 1px solid var(--line);
+    padding-top: 24px;
+  }
+  .scope .label { display: block; margin-bottom: 16px; }
+  .scope ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 40px;
+  }
+  .scope li {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+
+  /* ---------- Shell de seção ---------- */
+  section { padding-block: 88px; }
+  .section-head { max-width: 68ch; margin-bottom: 56px; }
+  .section-head .label { margin-bottom: 18px; display: block; }
+  .section-head h2 { font-size: clamp(26px, 3.4vw, 38px); }
+  .section-head .sub { margin-top: 18px; color: var(--text-secondary); font-size: 17px; max-width: 62ch; }
+
+  /* ---------- Grades de cartões ---------- */
+  .grid {
+    display: grid;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+  .card {
+    background: var(--white);
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .card h3 { font-size: 20px; }
+  .card p { color: var(--text-secondary); font-size: 15.5px; }
+
+  /* Símbolos — repertório da grade do Z, sempre em preto */
+  .glyph { width: 40px; height: 40px; flex: none; }
+  .glyph.square-full { background: var(--ink); }
+  .glyph.square-open { border: 6px solid var(--ink); }
+  .glyph.ring { border: 6px solid var(--ink); border-radius: 50%; }
+  .glyph.diamond { width: 30px; height: 30px; margin: 5px; background: var(--ink); transform: rotate(45deg); }
+  .glyph.half { background: linear-gradient(135deg, var(--ink) 0 50%, transparent 50% 100%); }
+  .glyph.bars { display: flex; flex-direction: column; gap: 5px; }
+  .glyph.bars i { display: block; height: 7px; background: var(--ink); }
+  .glyph.bars i:nth-child(1) { width: 100%; }
+  .glyph.bars i:nth-child(2) { width: 70%; }
+  .glyph.bars i:nth-child(3) { width: 40%; }
+  .glyph.grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px;
+  }
+  .glyph.grid2 i { display: block; background: var(--ink); }
+
+  /* ---------- Banda escura (segmentos) ---------- */
+  .band {
+    background: var(--ink);
+    color: var(--on-ink);
+    position: relative;
+  }
+  .band::before {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    height: 6px;
+    background: var(--on-ink-line);
+  }
+  .band h2 { color: var(--paper); font-size: clamp(24px, 3vw, 34px); }
+  .band .section-head { margin-bottom: 44px; }
+  .band .section-head .sub { color: var(--on-ink); }
+  .segments {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--on-ink-line);
+    border: 1px solid var(--on-ink-line);
+  }
+  .segments li {
+    background: var(--ink);
+    padding: 26px 24px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--on-ink);
+  }
+
+  /* ---------- Processo ---------- */
+  .process-list { display: flex; flex-direction: column; }
+  .process-item {
+    display: grid;
+    grid-template-columns: 100px 1fr 180px;
+    gap: 32px;
+    padding-block: 32px;
+    border-top: 1px solid var(--line);
+    align-items: start;
+  }
+  .process-item:last-child { border-bottom: 1px solid var(--line); }
+  .process-item .num {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--amber);
+    letter-spacing: 0.1em;
+    padding-top: 4px;
+  }
+  .process-item h3 { font-size: 20px; margin-bottom: 10px; }
+  .process-item p { color: var(--text-secondary); font-size: 16px; max-width: 62ch; }
+  .process-item .duration {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    padding-top: 6px;
+    text-align: right;
+  }
+
+  /* ---------- Sobre ---------- */
+  .sobre { background: var(--ink); color: var(--on-ink); }
+  .sobre .wrap {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .sobre .label { color: var(--amber); display: block; margin-bottom: 18px; }
+  .sobre h2 { color: var(--paper); font-size: clamp(26px, 3.4vw, 36px); margin-bottom: 24px; }
+  .sobre p { color: var(--on-ink); font-size: 16.5px; }
+  .sobre p + p { margin-top: 18px; }
+  .fact-list { display: flex; flex-direction: column; gap: 24px; }
+  .fact { border-top: 1px solid var(--on-ink-line); padding-top: 16px; }
+  .fact .label { color: var(--on-ink-label); margin-bottom: 8px; display: block; }
+  .fact strong { font-size: 17px; font-weight: 500; color: var(--paper); }
+
+  /* ---------- FAQ ---------- */
+  .faq { border-top: 1px solid var(--line); }
+  .faq details {
+    border-bottom: 1px solid var(--line);
+    padding-block: 24px;
+  }
+  .faq summary {
+    cursor: pointer;
+    list-style: none;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "";
+    flex: none;
+    width: 14px;
+    height: 14px;
+    border-right: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    transform: rotate(45deg) translate(-3px, -3px);
+    transition: transform 0.2s ease;
+  }
+  .faq details[open] summary::after { transform: rotate(225deg) translate(-3px, -3px); }
+  .faq details p {
+    margin-top: 16px;
+    color: var(--text-secondary);
+    font-size: 16px;
+    max-width: 68ch;
+  }
+
+  /* ---------- CTA ---------- */
+  .cta-inner {
+    border: 1px solid var(--ink);
+    padding: 64px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-inner::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0;
+    width: 120px;
+    height: 6px;
+    background: var(--amber);
+  }
+  .cta-inner::after {
+    content: "";
+    position: absolute;
+    left: 120px; top: 0; right: 0;
+    height: 6px;
+    background: var(--line);
+  }
+  .cta-inner h2 { font-size: clamp(24px, 3vw, 32px); max-width: 24ch; }
+  .cta-inner p { margin-top: 18px; color: var(--text-secondary); font-size: 16.5px; max-width: 46ch; }
+  .cta-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+  .cta-actions .email {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    text-decoration: none;
+  }
+  .cta-actions .email:hover { color: var(--ink); }
+
+  /* ---------- Rodapé ---------- */
+  footer {
+    border-top: 1px solid var(--line);
+    padding-block: 56px 40px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 40px;
+  }
+  .footer-col h4 {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin: 0 0 18px;
+  }
+  .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col a { text-decoration: none; font-size: 15px; }
+  .footer-col a:hover { color: var(--amber); }
+  .footer-col p,
+  .footer-col li.muted { font-size: 15px; color: var(--text-secondary); }
+  .footer-brand p {
+    margin-top: 20px;
+    color: var(--text-secondary);
+    font-size: 15px;
+    max-width: 34ch;
+  }
+  .footer-base {
+    border-top: 1px solid var(--line);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+
+  /* ---------- CTA fixo (mobile) ---------- */
+  .mobile-cta {
+    display: none;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 30;
+    background: var(--ink);
+    padding: 14px 24px;
+    padding-bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    text-align: center;
+  }
+  .mobile-cta a {
+    color: var(--paper);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+  }
+
+  @media (max-width: 980px) {
+    .process-item { grid-template-columns: 72px 1fr; }
+    .process-item .duration { grid-column: 2; text-align: left; padding-top: 0; margin-top: 12px; }
+    .cta-inner { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .sobre .wrap { grid-template-columns: 1fr; gap: 48px; }
+    .segments { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 720px) {
+    section { padding-block: 64px; }
+    .hero { padding-block: 64px 48px; }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .segments { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .cta-inner { padding: 40px 26px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+    .mobile-cta { display: block; }
+    body { padding-bottom: 72px; }
+    header .wrap .btn { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition-duration: 0.01ms !important; }
+  }
+</style>
 </head>
-<body class="bg-background text-on-surface font-body selection:bg-primary/30">
-<nav class="fixed top-0 w-full z-50 bg-neutral-950/60 backdrop-blur-xl border-b border-cyan-500/15 shadow-[0_0_40px_rgba(72,231,255,0.05)]">
-<div class="flex justify-between items-center px-8 py-3 max-w-screen-2xl mx-auto">
-<div class="text-2xl font-bold tracking-tighter text-cyan-400 font-headline">
-<img alt="Zelve Technologies Logo" class="h-16 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0ujtFjSJEBAtOQimf0BonMvFKGJ-5_CLGNO1gkx6mCktLHk6bq9R022GkhmCIKH-86_YGPOLpGzfryWZJ-KexVxeESiwhMW9Lty6nMEIOzrbipuodZFy-xkV5goObTQSufWuOkLJKTk284RirzD524J82gYSecJXPT1azAtGnABexFKFlivRxWOynMtUIXxNY82CXAeS1MijjD3_HaKQwjDC3vxn_Z-87Otdy6ANEP2eSlLazjtR_FKb3NE9BQ0Wl0LkK7J-i4pOWGo"/>
-</div>
-<div class="hidden md:flex items-center gap-10">
-<a class="font-headline tracking-tight text-xs uppercase transition-colors duration-300 hover:text-cyan-300 text-white" href="#">Inteligência Autônoma</a>
-<a class="font-headline tracking-tight text-xs uppercase transition-colors duration-300 hover:text-cyan-300 text-white" href="#">Tecnologia</a>
-<a class="font-headline tracking-tight text-xs uppercase transition-colors duration-300 hover:text-cyan-300 text-white" href="#">Core</a>
-</div>
-<button class="bg-primary text-on-primary-fixed rounded-full font-headline text-xs font-bold tracking-tight scale-95 transition-transform active:scale-90 hover:shadow-[0_0_20px_rgba(72,231,255,0.4)] px-6 py-3">Escalar Operação Autônoma</button>
-</div>
-</nav>
-<main class="relative overflow-hidden">
-<section class="relative min-h-[70vh] flex flex-col justify-center px-8 pt-20 pb-12 neural-grid">
-<div class="max-w-screen-xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-<div class="lg:col-span-7">
-<div class="mb-6">
-<span class="inline-block py-1 px-4 rounded-full ghost-border bg-surface-container-low text-primary font-headline tracking-widest uppercase mt-[30px] text-[12px]">
-                            Conversão Comercial Full-Time
-                        </span>
-</div>
-<h1 class="text-5xl md:text-6xl lg:text-7xl font-headline font-bold text-on-surface leading-[0.95] tracking-tighter mb-6">
-                        Sua operação comercial sem as <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">limitações humanas</span>
-</h1>
-<p class="text-lg md:text-xl text-on-surface max-w-xl leading-relaxed mb-8 border-l-2 border-primary pl-6 glow-text-cyan">Enquanto equipes tradicionais geram custos variáveis e gargalos operacionais, a Zelve entrega uma força de vendas constante, escalável e baseada em processamento neural de linguagem.</p>
-<div class="flex flex-wrap gap-4">
-<button class="core-glow-bg text-on-primary-fixed rounded-full font-headline font-bold tracking-tight hover:scale-105 transition-transform px-8 py-4 text-lg">Escalar Operação Autônoma</button>
-</div>
-</div>
-<div class="lg:col-span-5 relative">
-<img alt="Zelve Neural Brain visualization" class="relative z-10 w-full max-w-md mx-auto animate-pulse-breathing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB4DDvb8Ip9w5Eq1CaajgPlAajQMWZs40LEfjynVRBVBDajQBPByLDGcN8BtnipbZ6CBEf-v2uItldv4K8O3CBdnf5T_K1Vt55yHBbKpWUelEKTs57f-i-0WamcRfcsxTqgbSOAEiX7qvKp0VIj_fX3NaskgMHnwGa_61UtFUfIwIM4qpuohedcWar9RZ9JUI9bZET9uW4Jax4F236rK8Sy1Nlg2bUrGEBRLs0NvI_xI4uK0nDi6NQi3VlPPAoOL6r_EK3J_cxxOmA"/>
-</div>
-</div>
-</section>
-<section class="py-16 px-8 bg-surface-container-low relative">
-<div class="max-w-screen-xl mx-auto">
-<div class="mb-12 text-center">
-<h2 class="text-3xl md:text-4xl font-headline font-bold tracking-tight mb-3">Inteligência Autônoma</h2>
-<p class="text-on-surface-variant uppercase tracking-widest font-label text-xs">A evolução irreversível da lógica operacional</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 rounded-xl overflow-hidden shadow-2xl">
-<div class="p-10 bg-neutral-900 flex flex-col justify-between border-r border-white/5 relative">
-<div>
-<div class="flex items-center gap-3 mb-8">
-<span class="material-symbols-outlined text-amber-500/90 text-3xl">biotech</span>
-<h3 class="text-2xl font-headline font-bold uppercase tracking-tighter text-neutral-200">Atendimento Humano</h3>
-</div>
-<ul class="space-y-6">
-<li class="flex gap-4 text-neutral-300 group">
-<span class="material-symbols-outlined text-amber-600/80 shrink-0 mt-1 text-2xl">payments</span>
-<div class="flex flex-col">
-<span class="font-label text-xs uppercase tracking-widest text-amber-500/70 mb-1">Custos Elevados</span>
-<span class="text-neutral-200 font-body text-sm leading-snug">Salários, encargos sociais e impostos sobre a folha.</span>
-</div>
-</li>
-<li class="flex gap-4 text-neutral-300 group">
-<span class="material-symbols-outlined text-amber-600/80 shrink-0 mt-1 text-2xl">event_busy</span>
-<div class="flex flex-col">
-<span class="font-label text-xs uppercase tracking-widest text-amber-500/70 mb-1">Instabilidade</span>
-<span class="text-neutral-200 font-body text-sm leading-snug">Interrupções por atestados médicos e licenças.</span>
-</div>
-</li>
-<li class="flex gap-4 text-neutral-300 group">
-<span class="material-symbols-outlined text-amber-600/80 shrink-0 mt-1 text-2xl">timer_off</span>
-<div class="flex flex-col">
-<span class="font-label text-xs uppercase tracking-widest text-amber-500/70 mb-1">Indisponibilidade</span>
-<span class="text-neutral-200 font-body text-sm leading-snug">Pausas para almoço, férias e horários restritos.</span>
-</div>
-</li>
-<li class="flex gap-4 text-neutral-300 group">
-<span class="material-symbols-outlined text-amber-600/80 shrink-0 mt-1 text-2xl">block</span>
-<div class="flex flex-col">
-<span class="font-label text-xs uppercase tracking-widest text-amber-500/70 mb-1">Gargalo de Escala</span>
-<span class="text-neutral-200 font-body text-sm leading-snug">Capacidade limitada a apenas um atendimento por vez.</span>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="p-10 bg-neutral-950 relative overflow-hidden glow-cyan">
-<div class="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/10 to-transparent opacity-40"></div>
-<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
-<div class="relative z-10 flex flex-col justify-between h-full">
-<div>
-<div class="flex items-center gap-3 mb-8">
-<span class="material-symbols-outlined text-primary text-4xl glow-text-cyan" style="font-variation-settings: 'FILL' 1;">deployed_code</span>
-<h3 class="text-2xl font-headline font-bold uppercase tracking-tight text-white glow-text-cyan">Zelve Neural Core</h3>
-</div>
-<ul class="space-y-6">
-<li class="flex gap-4 text-on-surface">
-<span class="material-symbols-outlined text-primary shrink-0 mt-1 text-2xl">savings</span>
-<div class="flex flex-col">
-<span class="font-label text-xs uppercase tracking-widest text-primary mb-1 font-bold">Custo Otimizado</span>
-<span class="text-neutral-200 font-body text-sm leading-snug">Investimento fixo e previsível, sem passivos trabalhistas.</span>
-</div>
-</li>
-<li class="flex gap-4 text-on-surface">
-<span class="material-symbols-outlined text-primary shrink-0 mt-1 text-2xl">sync_saved_locally</span>
-<div class="flex flex-col">
-<span class="font-label text-xs uppercase tracking-widest text-primary mb-1 font-bold">100% Uptime</span>
-<span class="text-neutral-200 font-body text-sm leading-snug">Operação ininterrupta, 24 horas por dia, 365 dias por ano.</span>
-</div>
-</li>
-<li class="flex gap-4 text-on-surface">
-<span class="material-symbols-outlined text-primary shrink-0 mt-1 text-2xl">psychology</span>
-<div class="flex flex-col">
-<span class="font-label text-xs uppercase tracking-widest text-primary mb-1 font-bold">Linguagem Neural</span>
-<span class="text-neutral-200 font-body text-sm leading-snug">Comunicação fluida que elimina falhas de interpretação.</span>
-</div>
-</li>
-<li class="flex gap-4 text-on-surface">
-<span class="material-symbols-outlined text-primary shrink-0 mt-1 text-2xl">speed</span>
-<div class="flex flex-col">
-<span class="font-label text-xs uppercase tracking-widest text-primary mb-1 font-bold">Escala Infinita</span>
-<span class="text-neutral-200 font-body text-sm leading-snug">Gerenciamento de milhares de negociações simultâneas.</span>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="py-16 px-8">
-<div class="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-<div class="order-2 lg:order-1">
-<div class="relative aspect-video rounded-lg overflow-hidden ghost-border bg-surface-container-high group">
-<img alt="Zelve Cognitive Core architecture" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-700 animate-levitate-glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOZUHC_dUcIai4URupr_4AhztpMgT0wzDtjDOMnjUxI-nqtfQy2NTpQgjIuptCoEUsmifjbhMV-yVd-YYc4sZTU9q9lw4x9Z1mw6ZAFvIRc8kByx_ltDRAHFUus3tlUyR1Hc_2VjZ8wXtoRarKmOuAkDDaD3LLDrYvrggqVEuhJnGYU2mGju-X7FYK8E-2Ophtj2Z5pDp48VOboyeDXxd0R-WwU5iOG2QLJfyYSkgVUAIQHrVf_vhX3SOJuPbaH0Tj9-0yDLiWdDvN"/>
-</div>
-</div>
-<div class="order-1 lg:order-2">
-<h2 class="text-3xl md:text-4xl font-headline font-bold tracking-tight mb-6">O fim do erro operacional.</h2>
-<div class="space-y-4 text-on-surface-variant leading-relaxed text-base"><p>Nossa IA Conversacional utiliza modelos de linguagem neural para garantir que cada interação seja precisa, persuasiva e técnica.</p><p>Diferente de funcionários que sofrem com fadiga ou falta de treinamento, a Zelve evolui a cada diálogo.</p></div>
-</div>
-</div>
-</section>
-<section class="py-20 px-8 relative">
-<div class="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent"></div>
-</section>
+<body>
+
+<a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+<header>
+  <div class="wrap">
+    <a href="#topo" class="signature" aria-label="Zelve — início">
+      <span class="mark"></span>ELVE
+    </a>
+    <nav aria-label="Navegação principal">
+      <div class="nav-links">
+        <a href="#problemas">Problemas</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#processo">Como trabalhamos</a>
+        <a href="#sobre">Sobre</a>
+      </div>
+      <a href="#contato" class="btn solid">Agendar conversa</a>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+  <section class="hero" id="conteudo">
+    <div class="wrap">
+      <span class="label">Consultoria em transformação digital</span>
+      <h1>Processos automatizados sustentam operações que não podem parar.</h1>
+      <p class="sub">A Zelve projeta e implementa automação de processos, integração de sistemas e estratégia digital para empresas de médio e grande porte — unindo inteligência artificial, machine learning e gestão clássica em um único trabalho de consultoria.</p>
+      <div class="actions">
+        <a href="#contato" class="btn solid">Agendar conversa</a>
+        <a href="#processo" class="btn">Como trabalhamos</a>
+      </div>
+      <div class="scope">
+        <span class="label neutral">Frentes de atuação</span>
+        <ul>
+          <li>Conciliação financeira</li>
+          <li>Integração de sistemas</li>
+          <li>Rotinas recorrentes</li>
+          <li>Atendimento e vendas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="problemas">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label neutral">Onde a automação entra</span>
+        <h2>Quatro problemas operacionais concentram a maior parte do trabalho manual.</h2>
+        <p class="sub">São padrões que se repetem em operações de médio e grande porte, independentemente do setor. O diagnóstico começa por identificar quais deles pesam mais na sua estrutura.</p>
+      </div>
+      <div class="grid grid-2">
+        <article class="card">
+          <div class="glyph grid2" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <h3>Sistemas que não conversam entre si</h3>
+          <p>Extratos bancários, adquirentes e ERP mantidos em planilhas paralelas, com conferência manual linha a linha e um fechamento que depende sempre da mesma pessoa.</p>
+        </article>
+        <article class="card">
+          <div class="glyph bars" aria-hidden="true"><i></i><i></i><i></i></div>
+          <h3>Documentos e lançamentos digitados à mão</h3>
+          <p>Notas, faturas e registros redigitados em cada sistema. Cada reentrada de dado é uma chance de erro e um atraso no fechamento do período.</p>
+        </article>
+        <article class="card">
+          <div class="glyph square-open" aria-hidden="true"></div>
+          <h3>Comunicações recorrentes montadas manualmente</h3>
+          <p>Relatórios, comunicados e cobranças periódicas que consomem horas todo mês para reunir dados, formatar e enviar — sempre no mesmo formato.</p>
+        </article>
+        <article class="card">
+          <div class="glyph ring" aria-hidden="true"></div>
+          <h3>Atendimento sem registro estruturado</h3>
+          <p>Conversas de vendas e suporte espalhadas por canais de mensagem, sem integração com o sistema onde a operação de fato é registrada.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label neutral">Serviços</span>
+        <h2>Três frentes de trabalho, um único objetivo: reduzir o custo da operação.</h2>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <div class="glyph square-full" aria-hidden="true"></div>
+          <h3>Automação de processos</h3>
+          <p>Mapeamento e automação de rotinas operacionais e financeiras — conciliação, tratamento de dados e fluxos de aprovação — para reduzir retrabalho manual e erro operacional.</p>
+        </article>
+        <article class="card">
+          <div class="glyph half" aria-hidden="true"></div>
+          <h3>Integração de sistemas</h3>
+          <p>Conexão entre ERPs, planilhas, APIs e canais de atendimento, para que a informação circule entre as áreas sem reentrada manual de dados.</p>
+        </article>
+        <article class="card">
+          <div class="glyph diamond" aria-hidden="true"></div>
+          <h3>Estratégia digital</h3>
+          <p>Diagnóstico e roteiro de adoção de IA e automação, priorizando os pontos de maior custo operacional antes da escolha da tecnologia.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="segmentos">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label on-ink">Operações atendidas</span>
+        <h2>O trabalho começa no processo, não no setor.</h2>
+        <p class="sub">As rotinas que automatizamos aparecem em estruturas administrativas e financeiras de qualquer mercado. Estas são as operações em que a Zelve concentra atuação.</p>
+      </div>
+      <ul class="segments">
+        <li>Varejo e redes de franquias</li>
+        <li>Distribuição e atacado</li>
+        <li>Indústria</li>
+        <li>Serviços financeiros</li>
+        <li>Serviços B2B</li>
+        <li>Operações multifilial</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="processo">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label neutral">Como trabalhamos</span>
+        <h2>Um processo de quatro etapas, do diagnóstico à operação em produção.</h2>
+      </div>
+      <div class="process-list">
+        <div class="process-item">
+          <span class="num">01</span>
+          <div>
+            <h3>Diagnóstico</h3>
+            <p>Levantamento dos processos atuais, dos sistemas envolvidos e do custo operacional de cada etapa, junto às áreas que executam o processo hoje.</p>
+          </div>
+          <span class="duration">1 a 2 semanas</span>
+        </div>
+        <div class="process-item">
+          <span class="num">02</span>
+          <div>
+            <h3>Arquitetura</h3>
+            <p>Definição da automação ou integração necessária, priorizando o que gera retorno mais rápido sobre o esforço de implementação.</p>
+          </div>
+          <span class="duration">1 semana</span>
+        </div>
+        <div class="process-item">
+          <span class="num">03</span>
+          <div>
+            <h3>Implementação</h3>
+            <p>Desenvolvimento e implantação da solução, com testes conduzidos junto às pessoas que operam o processo no dia a dia.</p>
+          </div>
+          <span class="duration">Conforme o escopo</span>
+        </div>
+        <div class="process-item">
+          <span class="num">04</span>
+          <div>
+            <h3>Evolução contínua</h3>
+            <p>Acompanhamento pós-entrega e ajustes conforme o processo muda, a operação cresce ou novos sistemas entram em uso.</p>
+          </div>
+          <span class="duration">Acompanhamento mensal</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="sobre">
+    <div class="wrap">
+      <div>
+        <span class="label">Sobre a Zelve</span>
+        <h2>Uma consultoria boutique, formada por quem já automatizou a própria operação.</h2>
+        <p>A Zelve nasceu da experiência prática de automatizar rotinas financeiras e administrativas dentro de empresas em operação — antes de virar consultoria. O repertório vem de processos reais: conciliação entre adquirentes e ERP, geração automática de documentos fiscais por API, comunicados financeiros recorrentes para redes de franquias.</p>
+        <p>Sediada em Florianópolis, SC, é formada por três sócios com histórico em dados, engenharia de software e gestão, e atende empresas de médio e grande porte que buscam reduzir custo operacional por meio de automação e integração de sistemas.</p>
+      </div>
+      <div class="fact-list">
+        <div class="fact">
+          <span class="label">Sede</span>
+          <strong>Florianópolis, SC</strong>
+        </div>
+        <div class="fact">
+          <span class="label">Fundação</span>
+          <strong>2026</strong>
+        </div>
+        <div class="fact">
+          <span class="label">Sócios</span>
+          <strong>Gunther, Paulo Lentz e Thiago Meller</strong>
+        </div>
+        <div class="fact">
+          <span class="label">Público atendido</span>
+          <strong>Empresas de médio e grande porte, B2B</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="duvidas">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label neutral">Perguntas frequentes</span>
+        <h2>O que costuma ser perguntado antes da primeira conversa.</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Como começa um projeto com a Zelve?</summary>
+          <p>Pela conversa inicial de 30 minutos, em que mapeamos os processos candidatos à automação. O diagnóstico formal começa depois, com acesso às áreas que executam esses processos hoje.</p>
+        </details>
+        <details>
+          <summary>Vocês desenvolvem sob medida ou usam ferramentas de mercado?</summary>
+          <p>As duas coisas, e a escolha vem do diagnóstico. Quando uma ferramenta de mercado resolve o problema, o trabalho é a integração com os sistemas que a empresa já usa. Quando não resolve, desenvolvemos o que falta.</p>
+        </details>
+        <details>
+          <summary>Precisamos ter uma área de tecnologia para contratar?</summary>
+          <p>Não. Boa parte dos processos que automatizamos é operada por áreas financeiras e administrativas, e o trabalho é conduzido junto com quem executa o processo — não apenas com a área de TI.</p>
+        </details>
+        <details>
+          <summary>Quanto tempo até a primeira automação entrar em produção?</summary>
+          <p>Depende do escopo. O diagnóstico prioriza justamente o que entrega retorno mais rápido, de forma que a primeira automação entre em operação antes do encerramento do projeto.</p>
+        </details>
+        <details>
+          <summary>O que acontece depois da entrega?</summary>
+          <p>A etapa de evolução contínua prevê acompanhamento e ajustes conforme o processo muda, a operação cresce ou novos sistemas entram em uso.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="wrap">
+      <div class="cta-inner">
+        <div>
+          <h2>Uma conversa de 30 minutos identifica onde a automação reduz custo primeiro.</h2>
+          <p>Traga o processo que mais consome tempo da sua equipe hoje. A leitura inicial aponta o que dá para automatizar, o que isso exige e por onde começar.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="mailto:thiago@zelve.com.br?subject=Contato%20pelo%20site%20da%20Zelve" class="btn solid">Falar com a Zelve</a>
+          <a href="mailto:thiago@zelve.com.br" class="email">thiago@zelve.com.br</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
-<footer class="bg-neutral-950 w-full py-10 px-8 border-t border-neutral-900">
-<div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-screen-2xl mx-auto">
-<div class="flex items-center gap-8">
-<span class="text-primary font-headline font-bold tracking-tighter text-xl">
-<img alt="Zelve Technologies Logo" class="h-14 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0ujtFjSJEBAtOQimf0BonMvFKGJ-5_CLGNO1gkx6mCktLHk6bq9R022GkhmCIKH-86_YGPOLpGzfryWZJ-KexVxeESiwhMW9Lty6nMEIOzrbipuodZFy-xkV5goObTQSufWuOkLJKTk284RirzD524J82gYSecJXPT1azAtGnABexFKFlivRxWOynMtUIXxNY82CXAeS1MijjD3_HaKQwjDC3vxn_Z-87Otdy6ANEP2eSlLazjtR_FKb3NE9BQ0Wl0LkK7J-i4pOWGo"/>
-</span>
-<span class="font-manrope text-[10px] tracking-widest uppercase text-neutral-300">© 2026 Zelve Technologies. Liderando a Autonomia Comercial com Inteligência Neural.</span>
-</div>
-<div class="flex items-center">
-<span class="inline-block py-0.5 px-3 rounded-full ghost-border bg-black text-[9px] tracking-[0.15em] text-primary/80 font-headline uppercase font-bold">
-                    Conversão Comercial Full-Time
-                </span>
-</div>
-</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="#topo" class="signature" style="font-size:18px;" aria-label="Zelve — início">
+          <span class="mark" style="--side:22px;"></span>ELVE
+        </a>
+        <p>Consultoria em transformação digital para empresas de médio e grande porte.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#problemas">Problemas</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#processo">Como trabalhamos</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#duvidas">Perguntas frequentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:thiago@zelve.com.br">thiago@zelve.com.br</a></li>
+          <li class="muted">Florianópolis, SC — Brasil</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>© 2026 Zelve Technologies</span>
+      <span>Florianópolis, SC</span>
+    </div>
+  </div>
 </footer>
-</body></html>
+
+<div class="mobile-cta">
+  <a href="#contato">Agendar conversa</a>
+</div>
+
+</body>
+</html>
