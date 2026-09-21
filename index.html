@@ -190,15 +190,21 @@
 
   /* ---------- Hero ---------- */
   .hero { padding-block: 96px 64px; }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 72px;
+    align-items: center;
+  }
   .hero .label { margin-bottom: 28px; display: block; }
   .hero h1 {
-    font-size: clamp(34px, 5vw, 58px);
-    max-width: 15ch;
+    font-size: clamp(34px, 4.4vw, 54px);
+    max-width: 16ch;
     line-height: 1.12;
   }
   .hero .sub {
     margin-top: 28px;
-    max-width: 58ch;
+    max-width: 52ch;
     font-size: 19px;
   }
   .hero .actions {
@@ -206,6 +212,37 @@
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
+  }
+
+  /* ---------- Diagrama do hero ---------- */
+  .ledger { display: flex; flex-direction: column; gap: 18px; }
+  .ledger-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 8px;
+  }
+  .ledger-grid i {
+    display: block;
+    aspect-ratio: 1;
+    border: 2px solid var(--line);
+    background: transparent;
+    animation: ledger-fill 6s linear infinite;
+    animation-delay: calc(var(--col) * 0.32s);
+  }
+  @keyframes ledger-fill {
+    0%, 7%     { border-color: var(--line); background: transparent; }
+    9%         { border-color: var(--amber); background: var(--amber); }
+    12%, 52%   { border-color: var(--ink); background: var(--ink); }
+    60%, 100%  { border-color: var(--line); background: transparent; }
+  }
+  .ledger-caption {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
   }
 
   .scope {
@@ -395,14 +432,79 @@
     max-width: 68ch;
   }
 
+  /* ---------- Tratamento de dados ---------- */
+  .trust { background: var(--paper-support); }
+  .trust-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 56px;
+  }
+  .trust-item { border-top: 2px solid var(--ink); padding-top: 20px; }
+  .trust-item h3 { font-size: 18px; margin-bottom: 10px; }
+  .trust-item p { color: var(--text-secondary); font-size: 15.5px; max-width: 46ch; }
+
+  /* ---------- Formulário ---------- */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .field { display: flex; flex-direction: column; gap: 8px; }
+  .field.full { grid-column: 1 / -1; }
+  .field label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+  .field input,
+  .field textarea {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 16px;
+    color: var(--ink-soft);
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 0;
+    padding: 13px 14px;
+    width: 100%;
+  }
+  .field textarea { resize: vertical; min-height: 104px; }
+  .field input:focus,
+  .field textarea:focus { outline: 2px solid var(--amber); outline-offset: 1px; border-color: var(--ink); }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .form-foot {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .form-note {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    max-width: 44ch;
+  }
+  .form-status {
+    margin-top: 18px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .form-status:empty { margin-top: 0; }
+  .form-status.ok { color: var(--ink); border-left: 2px solid var(--amber); padding-left: 14px; }
+  .form-status.err { color: var(--ink); border-left: 2px solid var(--ink); padding-left: 14px; }
+  button.btn { cursor: pointer; }
+  button.btn[disabled] { opacity: 0.55; cursor: progress; }
+
   /* ---------- CTA ---------- */
   .cta-inner {
     border: 1px solid var(--ink);
     padding: 64px;
     display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 48px;
-    align-items: center;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 56px;
+    align-items: start;
     position: relative;
     overflow: hidden;
   }
@@ -423,15 +525,14 @@
   }
   .cta-inner h2 { font-size: clamp(24px, 3vw, 32px); max-width: 24ch; }
   .cta-inner p { margin-top: 18px; color: var(--text-secondary); font-size: 16.5px; max-width: 46ch; }
-  .cta-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
-  .cta-actions .email {
+  .email {
     font-family: var(--font-mono);
     font-size: 13px;
     letter-spacing: 0.08em;
     color: var(--text-secondary);
     text-decoration: none;
   }
-  .cta-actions .email:hover { color: var(--ink); }
+  .email:hover { color: var(--ink); }
 
   /* ---------- Rodapé ---------- */
   footer {
@@ -498,6 +599,8 @@
   }
 
   @media (max-width: 980px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 56px; }
+    .hero h1 { max-width: 18ch; }
     .process-item { grid-template-columns: 72px 1fr; }
     .process-item .duration { grid-column: 2; text-align: left; padding-top: 0; margin-top: 12px; }
     .cta-inner { grid-template-columns: 1fr; }
@@ -510,6 +613,9 @@
     section { padding-block: 64px; }
     .hero { padding-block: 64px 48px; }
     .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .trust-list { grid-template-columns: 1fr; gap: 32px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .ledger-grid { gap: 7px; }
     .segments { grid-template-columns: 1fr; }
     .nav-links { display: none; }
     .cta-inner { padding: 40px 26px; }
@@ -522,6 +628,14 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     * { transition-duration: 0.01ms !important; }
+    .ledger-grid i { animation: none; }
+    .ledger-grid i:nth-child(10n+1),
+    .ledger-grid i:nth-child(10n+2),
+    .ledger-grid i:nth-child(10n+3),
+    .ledger-grid i:nth-child(10n+4),
+    .ledger-grid i:nth-child(10n+5),
+    .ledger-grid i:nth-child(10n+6) { border-color: var(--ink); background: var(--ink); }
+    .ledger-grid i:nth-child(10n+7) { border-color: var(--amber); background: var(--amber); }
   }
 </style>
 </head>
@@ -549,12 +663,27 @@
 <main id="topo">
   <section class="hero" id="conteudo">
     <div class="wrap">
-      <span class="label">Consultoria em transformação digital</span>
-      <h1>Processos automatizados sustentam operações que não podem parar.</h1>
-      <p class="sub">A Zelve projeta e implementa automação de processos, integração de sistemas e estratégia digital para empresas de médio e grande porte — unindo inteligência artificial, machine learning e gestão clássica em um único trabalho de consultoria.</p>
-      <div class="actions">
-        <a href="#contato" class="btn solid">Agendar conversa</a>
-        <a href="#processo" class="btn">Como trabalhamos</a>
+      <div class="hero-grid">
+        <div>
+          <span class="label neutral">Consultoria em transformação digital</span>
+          <h1>Processos automatizados sustentam operações que não podem parar.</h1>
+          <p class="sub">A Zelve projeta e implementa automação de processos, integração de sistemas e estratégia digital para empresas de médio e grande porte — unindo inteligência artificial, machine learning e gestão clássica em um único trabalho de consultoria.</p>
+          <div class="actions">
+            <a href="#contato" class="btn solid">Agendar conversa</a>
+            <a href="#processo" class="btn">Como trabalhamos</a>
+          </div>
+        </div>
+        <div class="ledger" role="img" aria-label="Representação ilustrativa de lançamentos operacionais sendo processados automaticamente, da esquerda para a direita.">
+          <div class="ledger-grid" aria-hidden="true">
+            <i style="--col:1"></i><i style="--col:2"></i><i style="--col:3"></i><i style="--col:4"></i><i style="--col:5"></i><i style="--col:6"></i><i style="--col:7"></i><i style="--col:8"></i><i style="--col:9"></i><i style="--col:10"></i>
+            <i style="--col:1"></i><i style="--col:2"></i><i style="--col:3"></i><i style="--col:4"></i><i style="--col:5"></i><i style="--col:6"></i><i style="--col:7"></i><i style="--col:8"></i><i style="--col:9"></i><i style="--col:10"></i>
+            <i style="--col:1"></i><i style="--col:2"></i><i style="--col:3"></i><i style="--col:4"></i><i style="--col:5"></i><i style="--col:6"></i><i style="--col:7"></i><i style="--col:8"></i><i style="--col:9"></i><i style="--col:10"></i>
+            <i style="--col:1"></i><i style="--col:2"></i><i style="--col:3"></i><i style="--col:4"></i><i style="--col:5"></i><i style="--col:6"></i><i style="--col:7"></i><i style="--col:8"></i><i style="--col:9"></i><i style="--col:10"></i>
+            <i style="--col:1"></i><i style="--col:2"></i><i style="--col:3"></i><i style="--col:4"></i><i style="--col:5"></i><i style="--col:6"></i><i style="--col:7"></i><i style="--col:8"></i><i style="--col:9"></i><i style="--col:10"></i>
+            <i style="--col:1"></i><i style="--col:2"></i><i style="--col:3"></i><i style="--col:4"></i><i style="--col:5"></i><i style="--col:6"></i><i style="--col:7"></i><i style="--col:8"></i><i style="--col:9"></i><i style="--col:10"></i>
+          </div>
+          <span class="ledger-caption">Representação ilustrativa</span>
+        </div>
       </div>
       <div class="scope">
         <span class="label neutral">Frentes de atuação</span>
@@ -747,17 +876,71 @@
     </div>
   </section>
 
+  <section class="trust" id="dados">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label neutral">Tratamento de dados</span>
+        <h2>Automatizar um processo financeiro exige acesso a dados sensíveis.</h2>
+        <p class="sub">Por isso as regras de acesso são definidas antes do diagnóstico começar, e não durante a implementação.</p>
+      </div>
+      <div class="trust-list">
+        <div class="trust-item">
+          <h3>Acordo de confidencialidade</h3>
+          <p>O trabalho começa com NDA assinado, cobrindo dados de clientes, fornecedores e informações financeiras da operação.</p>
+        </div>
+        <div class="trust-item">
+          <h3>Acesso mínimo necessário</h3>
+          <p>Cada integração usa credenciais próprias, com a menor permissão que o processo exige, revogáveis a qualquer momento pela empresa.</p>
+        </div>
+        <div class="trust-item">
+          <h3>Dados no ambiente do cliente</h3>
+          <p>As automações rodam na infraestrutura e nas contas da própria empresa. A Zelve não mantém cópia dos dados operacionais após a entrega.</p>
+        </div>
+        <div class="trust-item">
+          <h3>Conformidade com a LGPD</h3>
+          <p>O tratamento de dados pessoais segue a Lei 13.709/2018, com registro das bases legais aplicáveis a cada fluxo automatizado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contato">
     <div class="wrap">
       <div class="cta-inner">
         <div>
           <h2>Uma conversa de 30 minutos identifica onde a automação reduz custo primeiro.</h2>
           <p>Traga o processo que mais consome tempo da sua equipe hoje. A leitura inicial aponta o que dá para automatizar, o que isso exige e por onde começar.</p>
+          <p style="margin-top:20px;"><a href="mailto:thiago@zelve.com.br" class="email">thiago@zelve.com.br</a></p>
         </div>
-        <div class="cta-actions">
-          <a href="mailto:thiago@zelve.com.br?subject=Contato%20pelo%20site%20da%20Zelve" class="btn solid">Falar com a Zelve</a>
-          <a href="mailto:thiago@zelve.com.br" class="email">thiago@zelve.com.br</a>
-        </div>
+        <form id="form-contato" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="nome">Nome</label>
+              <input id="nome" name="nome" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="empresa">Empresa</label>
+              <input id="empresa" name="empresa" type="text" autocomplete="organization" required>
+            </div>
+            <div class="field full">
+              <label for="email">E-mail corporativo</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field full">
+              <label for="processo">Qual processo mais consome tempo hoje?</label>
+              <textarea id="processo" name="processo" rows="4" required></textarea>
+            </div>
+            <div class="hp" aria-hidden="true">
+              <label for="site">Não preencha este campo</label>
+              <input id="site" name="site" type="text" tabindex="-1" autocomplete="off">
+            </div>
+          </div>
+          <div class="form-foot">
+            <button type="submit" class="btn solid" id="btn-enviar">Enviar</button>
+            <p class="form-note">Os dados enviados são usados apenas para responder a este contato, conforme a LGPD.</p>
+          </div>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </div>
   </section>
@@ -780,6 +963,7 @@
           <li><a href="#processo">Como trabalhamos</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#duvidas">Perguntas frequentes</a></li>
+          <li><a href="#dados">Tratamento de dados</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -800,6 +984,62 @@
 <div class="mobile-cta">
   <a href="#contato">Agendar conversa</a>
 </div>
+
+<script>
+(function () {
+  var form = document.getElementById('form-contato');
+  if (!form) return;
+  var status = document.getElementById('form-status');
+  var botao = document.getElementById('btn-enviar');
+  var EMAIL = 'thiago@zelve.com.br';
+
+  function mostrar(texto, tipo) {
+    status.textContent = texto;
+    status.className = 'form-status ' + tipo;
+  }
+
+  form.addEventListener('submit', function (evento) {
+    evento.preventDefault();
+
+    var dados = {
+      nome: form.nome.value.trim(),
+      empresa: form.empresa.value.trim(),
+      email: form.email.value.trim(),
+      processo: form.processo.value.trim(),
+      site: form.site.value
+    };
+
+    if (!dados.nome || !dados.empresa || !dados.email || !dados.processo) {
+      mostrar('Preencha todos os campos para enviar.', 'err');
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(dados.email)) {
+      mostrar('Confira o endereço de e-mail informado.', 'err');
+      return;
+    }
+
+    botao.disabled = true;
+    mostrar('Enviando…', 'ok');
+
+    fetch('/api/contato', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dados)
+    })
+      .then(function (resposta) {
+        if (!resposta.ok) throw new Error('falha');
+        form.reset();
+        mostrar('Mensagem recebida. Respondemos em até um dia útil.', 'ok');
+      })
+      .catch(function () {
+        mostrar('Não foi possível enviar agora. Escreva para ' + EMAIL + ' que respondemos do mesmo jeito.', 'err');
+      })
+      .then(function () {
+        botao.disabled = false;
+      });
+  });
+})();
+</script>
 
 </body>
 </html>
